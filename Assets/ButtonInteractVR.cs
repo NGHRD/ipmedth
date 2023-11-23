@@ -14,6 +14,7 @@ public class ButtonInteractVR : MonoBehaviour
     private bool isControllerInTrigger = false;
     private float resetDelayTimer;
     private bool audioPlaying = false; // Flag to track if audio is playing
+    private bool buttonPressed = false; // Flag to track if the button is currently pressed
 
     // Reference to the SpotlightController script
     public SpotlightController spotlightController;
@@ -35,6 +36,12 @@ public class ButtonInteractVR : MonoBehaviour
 
     private void Update()
     {
+        if (buttonPressed)
+        {
+            // If the button is pressed, don't allow further interaction until it has reset
+            return;
+        }
+
         if (isControllerInTrigger)
         {
             lerpProgress += Time.deltaTime * transitionSpeed;
@@ -53,27 +60,15 @@ public class ButtonInteractVR : MonoBehaviour
 
         lerpProgress = Mathf.Clamp(lerpProgress, 0.0f, 1.0f);
         transform.position = Vector3.Lerp(originalPosition, maxPressedPosition, lerpProgress);
-
-        // Check if the audio finished playing
-        if (audioPlaying && !audioSource.isPlaying)
-        {
-            audioPlaying = false;
-
-            // Call the function to switch to the next target in the SpotlightController
-            if (spotlightController != null)
-            {
-                spotlightController.SwitchToNextTarget();
-            }
-        }
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (!IsValidCollider(other)) return;
 
-        if (!isControllerInTrigger)
+        if (!buttonPressed)
         {
-            isControllerInTrigger = true;
+            buttonPressed = true;
             PlayButtonPressSound();
             resetDelayTimer = delayBeforeReset; // Reset the timer
         }
@@ -95,8 +90,23 @@ public class ButtonInteractVR : MonoBehaviour
             audioSource.clip = buttonClickSound;
             audioSource.Play();
             audioPlaying = true;
+
+            // Delay switching to the next target until the audio clip duration
+            Invoke("SwitchToNextTarget", buttonClickSound.length);
         }
         // Add haptic feedback here if your VR SDK supports it
+    }
+
+    private void SwitchToNextTarget()
+    {
+        // Call the function to switch to the next target in the SpotlightController
+        if (spotlightController != null)
+        {
+            spotlightController.SwitchToNextTarget();
+        }
+
+        // Reset the button state after switching to the next target
+        buttonPressed = false;
     }
 
     private bool IsValidCollider(Collider collider)
