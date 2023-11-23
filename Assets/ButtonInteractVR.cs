@@ -66,12 +66,14 @@ public class ButtonInteractVR : MonoBehaviour
 
     private void PlayButtonPressSound()
     {
-        if (buttonClickSound != null && audioSource != null)
+        // Only play the sound if it's not already playing
+        if (buttonClickSound != null && audioSource != null && !audioSource.isPlaying)
         {
             audioSource.PlayOneShot(buttonClickSound);
         }
         // Add haptic feedback here if your VR SDK supports it
     }
+
 
     private bool IsValidCollider(Collider collider)
     {
