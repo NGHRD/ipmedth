@@ -22,7 +22,13 @@ public class offontrigger : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         if (LightSource.activeSelf)
-        LightSource.SetActive(!LightSource.activeInHierarchy);
-        LightSource2.SetActive(!LightSource2.activeInHierarchy);
+        {
+            LightSource.SetActive(!LightSource.activeInHierarchy);
+            LightSource2.SetActive(!LightSource2.activeInHierarchy);
+        }
+        else
+        {
+            LightSource.SetActive(false);
+        };
     }
 }
