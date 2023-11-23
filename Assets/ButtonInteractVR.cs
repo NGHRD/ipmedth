@@ -13,6 +13,10 @@ public class ButtonInteractVR : MonoBehaviour
     private float lerpProgress = 0.0f; // Lerp progress
     private bool isControllerInTrigger = false;
     private float resetDelayTimer;
+    private bool audioPlaying = false; // Flag to track if audio is playing
+
+    // Reference to the SpotlightController script
+    public SpotlightController spotlightController;
 
     void Start()
     {
@@ -20,6 +24,13 @@ public class ButtonInteractVR : MonoBehaviour
         maxPressedPosition = originalPosition - new Vector3(0, moveDistance, 0);
         audioSource = GetComponent<AudioSource>();
         resetDelayTimer = delayBeforeReset;
+
+        // Disable auto-play and looping of the audio
+        if (audioSource != null)
+        {
+            audioSource.playOnAwake = false;
+            audioSource.loop = false;
+        }
     }
 
     private void Update()
@@ -42,6 +53,18 @@ public class ButtonInteractVR : MonoBehaviour
 
         lerpProgress = Mathf.Clamp(lerpProgress, 0.0f, 1.0f);
         transform.position = Vector3.Lerp(originalPosition, maxPressedPosition, lerpProgress);
+
+        // Check if the audio finished playing
+        if (audioPlaying && !audioSource.isPlaying)
+        {
+            audioPlaying = false;
+
+            // Call the function to switch to the next target in the SpotlightController
+            if (spotlightController != null)
+            {
+                spotlightController.SwitchToNextTarget();
+            }
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -67,13 +90,14 @@ public class ButtonInteractVR : MonoBehaviour
     private void PlayButtonPressSound()
     {
         // Only play the sound if it's not already playing
-        if (buttonClickSound != null && audioSource != null && !audioSource.isPlaying)
+        if (buttonClickSound != null && audioSource != null && !audioPlaying)
         {
-            audioSource.PlayOneShot(buttonClickSound);
+            audioSource.clip = buttonClickSound;
+            audioSource.Play();
+            audioPlaying = true;
         }
         // Add haptic feedback here if your VR SDK supports it
     }
-
 
     private bool IsValidCollider(Collider collider)
     {
