@@ -32,7 +32,7 @@ public class ButtonInteractVR : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
         if (!buttonPressed)
         {
@@ -55,7 +55,8 @@ public class ButtonInteractVR : MonoBehaviour
             lerpProgress = Mathf.Clamp01(lerpProgress);
             transform.position = Vector3.Lerp(originalPosition, maxPressedPosition, lerpProgress);
         }
-    }
+        else { return; }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {
