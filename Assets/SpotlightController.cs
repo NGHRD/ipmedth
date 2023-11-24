@@ -51,8 +51,7 @@ public class SpotlightController : MonoBehaviour
             int nextIndex = (targetObjects.IndexOf(currentTarget) + 1) % targetObjects.Count;
             currentTarget = targetObjects[nextIndex];
 
-            // Restart the rotation coroutine
-            StopAllCoroutines();
+            // Update the rotation coroutine for the new target
             StartCoroutine(RotateToTarget(currentTarget));
         }
     }
@@ -62,10 +61,11 @@ public class SpotlightController : MonoBehaviour
     {
         float elapsedTime = 0f;
         Quaternion startRotation = transform.rotation;
+        float rotationSpeedFactor = 1f / rotationSpeed; // Calculate it once
 
         while (elapsedTime < 1f)
         {
-            elapsedTime += Time.deltaTime * rotationSpeed;
+            elapsedTime += Time.deltaTime * rotationSpeedFactor;
             transform.rotation = Quaternion.Slerp(startRotation, initialRotation, elapsedTime);
             yield return null;
         }
