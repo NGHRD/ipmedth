@@ -58,7 +58,8 @@ public class ContainerController : MonoBehaviour
             LightBulb bulbController = lightBulb.GetComponent<LightBulb>();
             if (bulbController != null)
             {
-                bulbController.AddGreenMaterial(greenMaterial);
+                bulbController.ReplaceMaterial(greenMaterial);
+                Debug.Log("Poging om licht groen te maken....");
             }
 
             greenLightBulbsCount++;
