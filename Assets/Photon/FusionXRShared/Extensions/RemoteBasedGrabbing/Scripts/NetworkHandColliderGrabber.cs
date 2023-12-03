@@ -18,6 +18,7 @@ namespace Fusion.XR.Shared.Grabbing.NetworkHandColliderBased
 
         [HideInInspector]
         public NetworkHand hand;
+
         private void Awake()
         {
             hand = GetComponentInParent<NetworkHand>();
@@ -73,7 +74,7 @@ namespace Fusion.XR.Shared.Grabbing.NetworkHandColliderBased
             GrabbedObject = null;
         }
 
-        
+
         private void Update()
         {
             if (!hand.IsLocalNetworkRig || !hand.LocalHardwareHand) return;

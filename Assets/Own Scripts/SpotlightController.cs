@@ -1,15 +1,22 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections.Generic;
-using System.Collections;
 
 public class SpotlightController : MonoBehaviour
 {
-    public List<Transform> targetObjects; // List of objects the spotlight can look at
+    public List<TransformEventPair> targetObjects; // List of objects the spotlight can look at with associated events
     public float rotationSpeed = 5f; // The speed at which the spotlight rotates
 
     private Light spotlight;
     private Transform currentTarget; // The current target object
-    private Quaternion initialRotation; // Initial rotation of the spotlight
+    private PhoneScript currentPhoneScript; // Reference to the current PhoneScript
+
+    [System.Serializable]
+    public class TransformEventPair
+    {
+        public Transform target;
+        public UnityEvent lookedAtEvent; // UnityEvent for the associated function
+    }
 
     private void Start()
     {
@@ -21,11 +28,10 @@ public class SpotlightController : MonoBehaviour
             Debug.LogError("No target objects assigned!");
         }
 
-        // Initialize the current target and initial rotation
+        // Initialize the current target
         if (targetObjects.Count > 0)
         {
-            currentTarget = targetObjects[0];
-            initialRotation = transform.rotation;
+            currentTarget = targetObjects[0].target;
         }
     }
 
@@ -39,6 +45,13 @@ public class SpotlightController : MonoBehaviour
             // Use Quaternion.Slerp to smoothly rotate the spotlight towards the current target
             Quaternion rotation = Quaternion.LookRotation(directionToTarget);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+
+            // Check if the current target has an associated event and invoke it
+            UnityEvent currentEvent = targetObjects.Find(item => item.target == currentTarget)?.lookedAtEvent;
+            if (currentEvent != null)
+            {
+                currentEvent.Invoke();
+            }
         }
     }
 
@@ -47,30 +60,11 @@ public class SpotlightController : MonoBehaviour
     {
         if (targetObjects.Count > 1)
         {
+
             // Switch to the next target in the list
-            int nextIndex = (targetObjects.IndexOf(currentTarget) + 1) % targetObjects.Count;
-            currentTarget = targetObjects[nextIndex];
+            int nextIndex = (targetObjects.FindIndex(item => item.target == currentTarget) + 1) % targetObjects.Count;
+            currentTarget = targetObjects[nextIndex].target;
 
-            // Restart the rotation coroutine
-            StopAllCoroutines();
-            StartCoroutine(RotateToTarget(currentTarget));
         }
-    }
-
-    // Coroutine to smoothly rotate to the target over time
-    private IEnumerator RotateToTarget(Transform target)
-    {
-        float elapsedTime = 0f;
-        Quaternion startRotation = transform.rotation;
-
-        while (elapsedTime < 1f)
-        {
-            elapsedTime += Time.deltaTime * rotationSpeed;
-            transform.rotation = Quaternion.Slerp(startRotation, initialRotation, elapsedTime);
-            yield return null;
-        }
-
-        // Ensure the rotation ends exactly at the initial rotation
-        transform.rotation = initialRotation;
     }
 }
