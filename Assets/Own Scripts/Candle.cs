@@ -13,12 +13,12 @@ public class Candle : MonoBehaviour
     {
         meshRenderer = GetComponent<MeshRenderer>();
 
-        /*if (candleLight == null)
+        if (candleLight == null)
         {
             candleLight = GetComponentInChildren<Light>().gameObject;
         }
 
-        candleLight.SetActive(false);*/
+        candleLight.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,6 +39,7 @@ public class Candle : MonoBehaviour
             var materials = new List<Material>(meshRenderer.materials);
             materials.Add(litMaterial);
             meshRenderer.materials = materials.ToArray();
+            candleLight.SetActive(true);
         }
 
         CandleManager.Instance.CheckAllCandlesLit();
