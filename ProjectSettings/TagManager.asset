@@ -6,6 +6,7 @@ TagManager:
   tags:
   - light
   - light1
+  - Lighter
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - Locomotion
   - Item
-  - 
+  - Lighter
   - 
   - 
   - 
