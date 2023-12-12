@@ -10,7 +10,7 @@ public class PhoneScript : MonoBehaviour
     private NetworkHandColliderGrabbable grabbable;
     private AudioSource audioSource;
     private bool isRinging;
-    private bool isPlayingNewClip;
+    public bool isPlayingNewClip = false;
     private bool hasSwitchedTarget; // Flag to keep track of target switch
 
     private void Start()
@@ -64,16 +64,20 @@ public class PhoneScript : MonoBehaviour
     // Method to play the new audio clip
     public void PlayNewClip()
     {
-        // Stop the current clip and set the new one
-        audioSource.Stop();
-        audioSource.loop = false;
-        audioSource.PlayOneShot(newClip);
-
-        if (!hasSwitchedTarget)
+        if (!isPlayingNewClip)
         {
-            Invoke("SwitchNextTarget", newClip.length);
+            // Stop the current clip and set the new one
+            audioSource.Stop();
+            audioSource.PlayOneShot(newClip);
+            isPlayingNewClip = true;
+
+            if (!hasSwitchedTarget)
+            {
+                Invoke("SwitchNextTarget", newClip.length);
+            }
         }
     }
+
 
     private void SwitchNextTarget()
     {
