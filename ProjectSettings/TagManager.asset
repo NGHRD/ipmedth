@@ -7,6 +7,7 @@ TagManager:
   - light
   - light1
   - Lighter
+  - radio
   layers:
   - Default
   - TransparentFX
