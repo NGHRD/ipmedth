@@ -257,7 +257,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.68e-43, y: 0, z: 0, w: 1e-45}
+  m_BoundingSphereOverride: {x: 0, y: -6.948983e+31, z: 5.69e-43, w: 5.534e-41}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -907,7 +907,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 12.348306, z: 1.8758392, w: -1.9169798}
+  m_BoundingSphereOverride: {x: 0, y: 1.57e-43, z: 0, w: -1.6992012e+29}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -1392,7 +1392,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 12.348306, z: 1.8758392, w: -1.9169798}
+  m_BoundingSphereOverride: {x: 1.4549711e+22, y: 1.0809426e+10, z: 5.72e-43, w: NaN}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -3674,6 +3674,7 @@ GameObject:
   - component: {fileID: 533249978}
   - component: {fileID: 533249977}
   - component: {fileID: 533249976}
+  - component: {fileID: 533249979}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -3760,6 +3761,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533249974}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &533249979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533249974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c7c80a6f83de4541b8eb0e236ad2d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationAmount: -130
+  door: {fileID: 212712656}
+  orientation: 1
 --- !u!1 &538906457
 GameObject:
   m_ObjectHideFlags: 0
@@ -6870,7 +6886,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 12.348306, z: 1.8758392, w: -1.9169798}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: -2.3688725e+32}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -8504,7 +8520,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 6.73e-43, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -10979,7 +10995,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 6.73e-43, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: 221124.38}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -13817,21 +13833,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 40b94ebcf8e32164db8e0bbb1c030f20, type: 3}
   m_PrefabInstance: {fileID: 1936286267}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1867395890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1867395886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c7c80a6f83de4541b8eb0e236ad2d35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationAmount: -130
-  door: {fileID: 212712656}
-  orientation: 1
 --- !u!64 &1867395891
 MeshCollider:
   m_ObjectHideFlags: 0
