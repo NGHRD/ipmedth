@@ -1,5 +1,3 @@
-// TextSequenceController.cs
-
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -10,44 +8,61 @@ public class TextSequenceController : MonoBehaviour
     public class MediaSequence
     {
         public string text;
-        public Material imageMaterial;
-        public float transitionDuration = 2.0f;
+        public Material[] imageMaterials;
+        public AudioClip audioClip;
     }
 
     public TextMeshPro textMeshPro;
     public MediaSequence[] mediaSequences;
-    public GameObject imageCube; // Assign the cube that will display the images
-    public Vector3 teleportLocation; // Assign the teleport location in the inspector
+    public GameObject[] imageCubes;
+    public Vector3 teleportLocation;
     public MoveObjectsOnVideoEnd moveObjectsOnVideoEnd;
+    public AudioSource audioSource;
 
     private int currentIndex = 0;
     private bool isSequenceCompleted = false;
 
+    private Renderer[] cubeRenderers;
+
     void Start()
     {
-        StartCoroutine(SequenceCoroutine());
+        cubeRenderers = new Renderer[imageCubes.Length];
+        for (int i = 0; i < imageCubes.Length; i++)
+        {
+            cubeRenderers[i] = imageCubes[i].GetComponent<Renderer>();
+        }
     }
 
-    IEnumerator SequenceCoroutine()
+    public IEnumerator SequenceCoroutine()
     {
         while (currentIndex < mediaSequences.Length)
         {
-            // Display the current text, set the material to the cube
             MediaSequence currentSequence = mediaSequences[currentIndex];
             textMeshPro.text = currentSequence.text;
-            imageCube.GetComponent<Renderer>().material = currentSequence.imageMaterial;
 
-            // Wait for the specified transition duration
-            yield return new WaitForSeconds(currentSequence.transitionDuration);
+            for (int i = 0; i < Mathf.Min(imageCubes.Length, currentSequence.imageMaterials.Length); i++)
+            {
+                cubeRenderers[i].material = currentSequence.imageMaterials[i];
+            }
 
-            // Move to the next media sequence
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = currentSequence.audioClip;
+                audioSource.Play();
+                Debug.Log("Playing audio: " + currentSequence.audioClip.name);
+            }
+
+            while (audioSource.isPlaying)
+            {
+                yield return null;
+            }
+
             currentIndex++;
+            Debug.Log("Advancing to the next index: " + currentIndex);
         }
 
-        // All sequences are completed
         isSequenceCompleted = true;
-
-        // Teleport to the specified location
+        Debug.Log("All sequences completed.");
         TeleportToLocation();
     }
 
@@ -55,11 +70,9 @@ public class TextSequenceController : MonoBehaviour
     {
         if (isSequenceCompleted && teleportLocation != null)
         {
-            // Teleport to the specified location
             moveObjectsOnVideoEnd.MovePlayersToNewPosition(teleportLocation);
-
-            // Start the video in MoveObjectsOnVideoEnd
             StartCoroutine(moveObjectsOnVideoEnd.CheckVideoEnd());
+            Debug.Log("Teleporting to location: " + teleportLocation);
         }
         else if (!isSequenceCompleted)
         {
@@ -70,5 +83,4 @@ public class TextSequenceController : MonoBehaviour
             Debug.LogError("Teleport location not assigned!");
         }
     }
-
 }
