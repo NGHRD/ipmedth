@@ -163,7 +163,6 @@ GameObject:
   - component: {fileID: 4208948367510053346}
   - component: {fileID: 4208948367510053357}
   - component: {fileID: 4208948367510053356}
-  - component: {fileID: 7613669789080370747}
   - component: {fileID: 4208948367642590992}
   - component: {fileID: 8665340302229376672}
   m_Layer: 0
@@ -323,21 +322,6 @@ MonoBehaviour:
   isRayEnabled: 0
   status: 0
   lastHit: {x: 0, y: 0, z: 0}
---- !u!114 &7613669789080370747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4208948367510053347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26cf04a2efd7a0544a3bc987cca0fda0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grabbedObject: {fileID: 0}
-  networkGrabber: {fileID: 0}
-  hoveredGrabbables: []
 --- !u!54 &4208948367642590992
 Rigidbody:
   m_ObjectHideFlags: 0
