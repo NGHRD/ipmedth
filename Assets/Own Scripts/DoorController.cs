@@ -17,54 +17,58 @@ public class DoorController : MonoBehaviour
   private bool timerActive = false;
   public GameObject door;
   public Orientation orientation;
+    private bool hasSwitchedTargets = false;
 
-  private void OnTriggerEnter(Collider other)
-  {
-    Debug.Log(triggerActive);
-    if (triggerActive)
+    private void OnTriggerEnter(Collider other)
     {
-      if (!isOpen) // Make sure the object entering the trigger is the player
-      {
-        OpenDoor();
-        isOpen = true;
-        triggerActive = false;
-        Debug.Log("Door opened!");
-      }
-      else
-      {
-        CloseDoor();
-        isOpen = false;
-        triggerActive = false;
-        Debug.Log("Door closed!");
-      }
+        Debug.Log(triggerActive);
+
+        if (triggerActive && !hasSwitchedTargets)
+        {
+            if (!isOpen)
+            {
+                OpenDoor();
+                isOpen = true;
+                triggerActive = false;
+                Debug.Log("Door opened!");
+            }
+            else
+            {
+                CloseDoor();
+                isOpen = false;
+                triggerActive = false;
+                Debug.Log("Door closed!");
+            }
+
+            // Call SwitchToNextTarget from the SpotlightController
+            SpotlightController spotlightController = FindObjectOfType<SpotlightController>();
+            if (spotlightController != null)
+            {
+                spotlightController.SwitchToNextTarget();
+            }
+
+            hasSwitchedTargets = true; // Set the flag to true
+        }
     }
-  }
 
-  private void OnTriggerExit(Collider other)
-  {
-    if(!timerActive)
+    private void OnTriggerExit(Collider other)
     {
-      timerActive = true;
-      Invoke("setTriggerActive", 2);
+        if (!timerActive)
+        {
+            timerActive = true;
+            Invoke("SetTriggerActive", 2);
+        }
     }
-   
-/*    if (isOpen) // Make sure the object exiting the trigger is the player
+
+    private void SetTriggerActive()
     {
-      isOpen = false;
+        triggerActive = true;
+        timerActive = false;
+        hasSwitchedTargets = false; // Reset the flag when the player exits the trigger
     }
-    else
-    {
-      isOpen = true;
-    }*/
-  }
 
-  private void setTriggerActive()
-  {
-    triggerActive = true;
-    timerActive = false;
-  }
 
-  private void OpenDoor()
+    private void OpenDoor()
     {
     switch (orientation)
     {
