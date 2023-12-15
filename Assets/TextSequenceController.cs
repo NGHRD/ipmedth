@@ -15,7 +15,7 @@ public class TextSequenceController : MonoBehaviour
     public TextMeshPro textMeshPro;
     public MediaSequence[] mediaSequences;
     public GameObject[] imageCubes;
-    public Vector3 teleportLocation;
+    public GameObject teleportLocation;
     public MoveObjectsOnVideoEnd moveObjectsOnVideoEnd;
     public AudioSource audioSource;
 

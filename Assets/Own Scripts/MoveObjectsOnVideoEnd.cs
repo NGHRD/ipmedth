@@ -6,7 +6,7 @@ public class MoveObjectsOnVideoEnd : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
     public GameObject cameraLight;
-    public Vector3 roomPosition; // Set the new position for the players
+    public GameObject roomPosition; // Set the new position for the players
 
     private bool videoPlaying = false;
 
@@ -56,13 +56,13 @@ public class MoveObjectsOnVideoEnd : MonoBehaviour
         cameraLight.SetActive(false);
     }
 
-    public void MovePlayersToNewPosition(Vector3 newPosition)
+    public void MovePlayersToNewPosition(GameObject newPosition)
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
         foreach (GameObject player in players)
         {
-            player.transform.position = newPosition;
+            player.transform.position = newPosition.transform.position;
         }
     }
 }
