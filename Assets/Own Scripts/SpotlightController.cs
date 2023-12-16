@@ -20,7 +20,9 @@ public class SpotlightController : MonoBehaviour
     public List<TransformEventPair> targetObjects;
 
     public Transform currentTarget;
+    private Transform currentFlowTarget;
     private Dictionary<MeshRenderer, List<Material>> originalMaterials = new Dictionary<MeshRenderer, List<Material>>();
+    private Dictionary<MeshRenderer, List<Material>> originalFlowMaterials = new Dictionary<MeshRenderer, List<Material>>();
 
     private void Start()
     {
@@ -33,13 +35,14 @@ public class SpotlightController : MonoBehaviour
         if (targetObjects.Count > 0)
         {
             currentTarget = targetObjects[0].targets[0];
+            currentFlowTarget = targetObjects[0].targets[1];
         }
 
-        // Cache the original materials for all targets
+        // Cache the original materials for all targets and flow targets
         CacheOriginalMaterials();
 
         // Apply initial flow materials
-        ApplyFlowMaterials(currentTarget);
+        ApplyFlowMaterials(currentFlowTarget);
     }
 
     private void Update()
@@ -64,23 +67,24 @@ public class SpotlightController : MonoBehaviour
             int subTargetIndex = targetObjects[targetIndex].targets.IndexOf(currentTarget);
             subTargetIndex = (subTargetIndex + 1) % targetObjects[targetIndex].targets.Count;
             Transform nextTarget = targetObjects[targetIndex].targets[subTargetIndex];
-
+            Transform nextFlowTarget = targetObjects[targetIndex].targets[subTargetIndex + 1];
             // Apply or replace flow materials based on the flags
             if (targetObjects[targetIndex].replaceAllMaterials)
             {
-                ReplaceAllMaterials(nextTarget);
+                ReplaceAllMaterials(nextFlowTarget);
             }
             else
             {
                 // Remove added flow materials from the current target
-                RemoveAddedFlowMaterials(currentTarget);
+                RemoveAddedFlowMaterials(currentFlowTarget);
             }
 
             // Apply the updated flow materials to the next target
-            ApplyFlowMaterials(nextTarget);
+            ApplyFlowMaterials(nextFlowTarget);
 
-            // Update the current target
+            // Update the current target and flow target
             currentTarget = nextTarget;
+            currentFlowTarget = nextFlowTarget;
         }
     }
 
@@ -96,6 +100,19 @@ public class SpotlightController : MonoBehaviour
                     originalMaterials.Add(targetRenderer, targetRenderer.materials.ToList());
                 }
             }
+
+            // Cache the original flow materials for flow targets
+            if (targetObject.addFlowMaterial)
+            {
+                foreach (var target in targetObject.targets)
+                {
+                    MeshRenderer targetRenderer = target.GetComponent<MeshRenderer>();
+                    if (targetRenderer != null && !originalFlowMaterials.ContainsKey(targetRenderer))
+                    {
+                        originalFlowMaterials.Add(targetRenderer, targetRenderer.materials.ToList());
+                    }
+                }
+            }
         }
     }
 
@@ -103,20 +120,11 @@ public class SpotlightController : MonoBehaviour
     {
         if (target != null)
         {
-            foreach (var targetObject in targetObjects)
+            MeshRenderer targetRenderer = target.GetComponent<MeshRenderer>();
+            if (targetRenderer != null && originalFlowMaterials.TryGetValue(targetRenderer, out var originalFlowMats))
             {
-                if (targetObject.targets.Contains(target) && targetObject.addFlowMaterial)
-                {
-                    foreach (var t in targetObject.targets)
-                    {
-                        MeshRenderer targetRenderer = t.GetComponent<MeshRenderer>();
-                        if (targetRenderer != null && originalMaterials.TryGetValue(targetRenderer, out var originalMats))
-                        {
-                            // Remove only the added flow materials
-                            targetRenderer.materials = originalMats.Except(new[] { targetObject.flowMaterial }).ToArray();
-                        }
-                    }
-                }
+                // Remove only the added flow materials
+                targetRenderer.materials = originalFlowMats.ToArray();
             }
         }
     }
