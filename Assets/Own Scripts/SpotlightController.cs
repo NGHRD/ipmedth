@@ -19,7 +19,7 @@ public class SpotlightController : MonoBehaviour
 
     public List<TransformEventPair> targetObjects;
 
-    private Transform currentTarget;
+    public Transform currentTarget;
     private Dictionary<MeshRenderer, List<Material>> originalMaterials = new Dictionary<MeshRenderer, List<Material>>();
 
     private void Start()

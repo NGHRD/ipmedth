@@ -51,6 +51,8 @@ namespace Fusion.XR.Shared.Grabbing.NetworkHandColliderBased
         Vector3 localPositionOffsetWhileTakingAuthority;
         Quaternion localRotationOffsetWhileTakingAuthority;
         NetworkHandColliderGrabber grabberWhileTakingAuthority;
+        private bool isGrabbingEnabled;
+        public SpotlightController spotlightController;
 
         public static void OnGrabberChanged(Changed<NetworkHandColliderGrabbable> changed)
         {
@@ -160,8 +162,53 @@ namespace Fusion.XR.Shared.Grabbing.NetworkHandColliderBased
         {
             // While grabbed, we disable physics forces on the object, to force a position based tracking
             if (networkRigidbody) networkRigidbody.Rigidbody.isKinematic = true;
-            if (onDidGrab != null) onDidGrab.Invoke(CurrentGrabber);
+
+            // Perform the check if the grabbed object is the right target
+            if (IsRightTarget())
+            {
+                // Enable grabbing logic
+                isGrabbingEnabled = true;
+
+                if (onDidGrab != null) onDidGrab.Invoke(CurrentGrabber);
+            }
+            else
+            {
+                // Disable grabbing logic
+                isGrabbingEnabled = false;
+
+                // Optionally, ungrab the object
+                Ungrab();
+            }
         }
+
+        private bool IsRightTarget()
+        {
+            // Example: Check if the grabbed object is the target of the SpotlightController
+            if (spotlightController != null)
+            {
+                if (spotlightController.currentTarget == CurrentGrabber.GrabbedObject.transform)
+                {
+                    // Debug log for the current target
+                    Debug.Log("Current target is the right target.");
+                    return true;
+                }
+                else
+                {
+                    Debug.Log("Spotlightcontroller: " + spotlightController.currentTarget);
+                    Debug.Log("CurrentGrabber: " + CurrentGrabber.GrabbedObject.transform);
+                    // Debug log for when the current target is not the right target
+                    Debug.Log("Current target is not the right target.");
+                    return false;
+                }
+            }
+            else
+            {
+                // Debug log for when the spotlightController is not assigned
+                Debug.LogWarning("SpotlightController is not assigned.");
+                return false;
+            }
+        }
+
 
         void DidUngrab()
         {
