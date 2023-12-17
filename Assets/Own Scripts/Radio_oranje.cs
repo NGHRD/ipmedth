@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
+
 public class Radio_oranje : MonoBehaviour
 {
     // Array of AudioClip for different stations
@@ -21,7 +23,7 @@ public class Radio_oranje : MonoBehaviour
     {
         if (!alreadyPlayed)
         {
-            audioSource.PlayOneShot(clip);
+            audioSource.PlayOneShot(clip, 0.7F);
             alreadyPlayed = true;
             if (!audioSource.isPlaying && !hasSwitchedToNextTarget)
             {
