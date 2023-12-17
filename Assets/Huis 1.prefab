@@ -3994,6 +3994,7 @@ Transform:
   - {fileID: 3261726448059692309}
   - {fileID: 3261726447514773727}
   - {fileID: 1985304207735540848}
+  - {fileID: 3261726448005320553}
   - {fileID: 3261726448116736510}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -6046,6 +6047,37 @@ Transform:
   m_Father: {fileID: 3261726448116736510}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
+--- !u!1 &3261726448005320552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3261726448005320553}
+  m_Layer: 0
+  m_Name: Curtains
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3261726448005320553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3261726448005320552}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.177502, y: -3.0766697, z: -6.0956793}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3261726447433129619}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3261726448017460844
 GameObject:
   m_ObjectHideFlags: 0
@@ -6613,7 +6645,7 @@ Transform:
   - {fileID: 3261726446749861052}
   - {fileID: 3261726447370219850}
   m_Father: {fileID: 3261726447433129619}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3261726448117205944
 GameObject:

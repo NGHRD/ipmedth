@@ -6,48 +6,63 @@ public class MoveObjectsOnVideoEnd : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
     public GameObject cameraLight;
-    public Vector3 newPosition; // Set the new position for the players
+    public GameObject roomPosition; // Set the new position for the players
 
-    private bool videoEnded = false;
+    private bool videoPlaying = false;
 
     void Start()
     {
         if (videoPlayer == null)
         {
             videoPlayer = GetComponent<VideoPlayer>();
+            cameraLight.SetActive(false);
         }
+    }
 
+    public void PlayVideoAndMovePlayers()
+    {
         StartCoroutine(CheckVideoEnd());
     }
 
-    IEnumerator CheckVideoEnd()
+    public IEnumerator CheckVideoEnd()
     {
-        while (true)
-        {
-            if (videoPlayer.isPlaying)
-            {
+        videoPlaying = true;
 
-                yield return null;
-            }
-            else
-            {
-                // Video has ended
-                Debug.Log("naar andere positie");
-                MovePlayersToNewPosition();
-                cameraLight.SetActive(false);
-                
-                yield break;
-            }
-        }
+        videoPlayer.Play();
+        cameraLight.SetActive(true);
+
+        // Wait until the video has ended
+        yield return new WaitUntil(() => !videoPlayer.isPlaying);
+
+        // Video has ended
+        Debug.Log("Video has ended");
+
+        MovePlayersToNewPosition(roomPosition);
+
+        videoPlaying = false;
+
+        cameraLight.SetActive(false);
     }
 
-    void MovePlayersToNewPosition()
+    public bool IsVideoPlaying()
+    {
+        return videoPlaying;
+    }
+
+    public void StopVideo()
+    {
+        videoPlayer.Stop();
+        videoPlaying = false;
+        cameraLight.SetActive(false);
+    }
+
+    public void MovePlayersToNewPosition(GameObject newPosition)
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
         foreach (GameObject player in players)
         {
-            player.transform.position = newPosition;
+            player.transform.position = newPosition.transform.position;
         }
     }
 }

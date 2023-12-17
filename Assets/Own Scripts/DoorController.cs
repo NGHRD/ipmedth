@@ -4,40 +4,108 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    public float rotationAmount = -90f; // Adjustable variable for rotation amount
-    private bool isOpen = false;
-    public GameObject door;
+  public enum Orientation
+  {
+    X,
+    Y,
+    Z
+  };
+
+  public float rotationAmount = -90f; // Adjustable variable for rotation amount
+  private bool isOpen = false;
+  private bool triggerActive = true;
+  private bool timerActive = false;
+  public GameObject door;
+  public Orientation orientation;
+    private bool hasSwitchedTargets = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isOpen) // Make sure the object entering the trigger is the player
+        Debug.Log(triggerActive);
+
+        if (triggerActive && !hasSwitchedTargets)
         {
-            OpenDoor();
-            Debug.Log("Door opened!");
-        }
-        else
-        {
-            CloseDoor();
-            Debug.Log("Door closed!");
+            if (!isOpen)
+            {
+                OpenDoor();
+                isOpen = true;
+                triggerActive = false;
+                Debug.Log("Door opened!");
+            }
+            else
+            {
+                CloseDoor();
+                isOpen = false;
+                triggerActive = false;
+                Debug.Log("Door closed!");
+            }
+
+            // Call SwitchToNextTarget from the SpotlightController
+            SpotlightController spotlightController = FindObjectOfType<SpotlightController>();
+            if (spotlightController != null)
+            {
+                spotlightController.SwitchToNextTarget();
+            }
+
+            hasSwitchedTargets = true; // Set the flag to true
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (isOpen) // Make sure the object exiting the trigger is the player
+        if (!timerActive)
         {
-            isOpen = false;
+            timerActive = true;
+            Invoke("SetTriggerActive", 2);
         }
     }
 
+    private void SetTriggerActive()
+    {
+        triggerActive = true;
+        timerActive = false;
+        hasSwitchedTargets = false; // Reset the flag when the player exits the trigger
+    }
+
+
     private void OpenDoor()
     {
-        door.transform.localRotation *= Quaternion.Euler(0f, 0f, rotationAmount); // Rotate locally around the Y-axis
+    switch (orientation)
+    {
+      case Orientation.X:
+        door.transform.localRotation *= Quaternion.Euler(rotationAmount, 0f, 0f);
         isOpen = true;
+        break;
+      case Orientation.Y:
+        door.transform.localRotation *= Quaternion.Euler(0f, rotationAmount, 0f);
+        isOpen = true;
+        break;
+      case Orientation.Z:
+        door.transform.localRotation *= Quaternion.Euler(0f, 0f, rotationAmount);
+        isOpen = true;
+        break;
+      default:
+        Debug.Log("Invalid rotation axis!");
+        break;
     }
+  }
 
     private void CloseDoor()
     {
-        door.transform.localRotation *= Quaternion.Euler(0f, 0f, -rotationAmount); // Rotate back to the original local rotation
+      switch (orientation) {
+      case Orientation.X:
+        door.transform.localRotation *= Quaternion.Euler(-rotationAmount, 0f, 0f);
+        break;
+      case Orientation.Y:
+        door.transform.localRotation *= Quaternion.Euler(0f, -rotationAmount, 0f);
+        break;
+      case Orientation.Z:     
+        door.transform.localRotation *= Quaternion.Euler(0f, 0f, -rotationAmount);
+        break;
+      default:
+        Debug.Log("Invalid rotation axis!");
+        break;
+      }
+      // Rotate back to the original local rotation
     }
-}
+  }
