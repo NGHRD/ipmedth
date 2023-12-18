@@ -64,13 +64,11 @@ public class PhoneScript : MonoBehaviour
     // Method to play the new audio clip
     public void PlayNewClip()
     {
-        StopRing();
         if (!isPlayingNewClip)
         {
             // Stop the current clip and set the new one
             audioSource.Stop();
-            audioSource.loop = false;
-            audioSource.Play();
+            audioSource.PlayOneShot(newClip);
             isPlayingNewClip = true;
 
             if (!hasSwitchedTarget)
@@ -83,8 +81,10 @@ public class PhoneScript : MonoBehaviour
 
     private void SwitchNextTarget()
     {
-            audioSource.Stop();
+        if (grabbable != null)
+        {
             spotlightController.SwitchToNextTarget();
             hasSwitchedTarget = true; // Update the flag after switching target
         }
     }
+}

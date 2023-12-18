@@ -24,6 +24,7 @@ public class CorrectItem_Test : MonoBehaviour
             {
                 //AllRightItemsPlaced();
                 Debug.Log("alle items zitten erin!");
+                hasNotSwitchedToNextTarget = true;
                 spotlightController.SwitchToNextTarget();
             }
             else
@@ -34,7 +35,6 @@ public class CorrectItem_Test : MonoBehaviour
         else
         {
             Debug.Log("Item doesn't belong in the container.");
-            item.GetComponent<WarpToOriginalPosition>().WarpToOriginal();
         }
     }
 

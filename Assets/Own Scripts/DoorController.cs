@@ -42,7 +42,7 @@ public class DoorController : MonoBehaviour
             }
 
             // Call SwitchToNextTarget from the SpotlightController
-            if (spotlightController != null)
+            if (spotlightController != null && !hasSwitchedTargets)
             {
                 spotlightController.SwitchToNextTarget();
             }
@@ -64,7 +64,6 @@ public class DoorController : MonoBehaviour
     {
         triggerActive = true;
         timerActive = false;
-        hasSwitchedTargets = false; // Reset the flag when the player exits the trigger
     }
 
     public void ResetSwitchedTargetsFlag()

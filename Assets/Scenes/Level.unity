@@ -3929,6 +3929,10 @@ PrefabInstance:
       propertyPath: spotlightController
       value: 
       objectReference: {fileID: 578565961}
+    - target: {fileID: 4098616816353200680, guid: 782295ac1b6faa745bdea6d72a0dfc1a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4098616816353200681, guid: 782295ac1b6faa745bdea6d72a0dfc1a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -8424,8 +8428,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.95607966, z: 1}
-  m_Center: {x: 0, y: 0.021961639, z: 0}
+  m_Size: {x: 1, y: 0.9560797, z: 0.77274424}
+  m_Center: {x: -6.830322e-13, y: 0.02196163, z: -0.11362801}
 --- !u!23 &996383797
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11207,7 +11211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ringSound: {fileID: 8300000, guid: 74284eaba7126f74b8309d0ba3ab90e1, type: 3}
-  newClip: {fileID: 8300000, guid: 6cfabf3b4c559b944ab0c44df6708654, type: 3}
+  newClip: {fileID: 8300000, guid: 01ccff8eb58afb74493fb76c25b123c9, type: 3}
   spotlightController: {fileID: 578565961}
   isPlayingNewClip: 0
 --- !u!114 &1274160344
@@ -11255,16 +11259,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onWillGrab:
-    m_PersistentCalls:
-      m_Calls: []
-  onDidGrab:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 1274160343}
-        m_TargetAssemblyTypeName: PhoneScript, Assembly-CSharp
-        m_MethodName: StopRing
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11273,6 +11271,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onWillGrab:
+    m_PersistentCalls:
+      m_Calls: []
+  onDidGrab:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 1274160343}
         m_TargetAssemblyTypeName: PhoneScript, Assembly-CSharp
         m_MethodName: PlayNewClip
@@ -21409,7 +21413,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: 3.5245e+30}
+  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: -8.1467786e-26}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0

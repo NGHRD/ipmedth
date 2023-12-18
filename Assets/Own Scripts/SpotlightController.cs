@@ -84,6 +84,7 @@ public class SpotlightController : MonoBehaviour
 
             // Update the current target and flow target
             currentTarget = nextTarget;
+            Debug.Log(targetIndex);
             currentFlowTarget = nextFlowTarget;
         }
     }
