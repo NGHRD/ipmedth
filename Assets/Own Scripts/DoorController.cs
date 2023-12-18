@@ -11,7 +11,8 @@ public class DoorController : MonoBehaviour
     Z
   };
 
-  public float rotationAmount = -90f; // Adjustable variable for rotation amount
+  public float rotationAmount = -90f;
+  public SpotlightController spotlightController;// Adjustable variable for rotation amount
   private bool isOpen = false;
   private bool triggerActive = true;
   private bool timerActive = false;
@@ -41,7 +42,6 @@ public class DoorController : MonoBehaviour
             }
 
             // Call SwitchToNextTarget from the SpotlightController
-            SpotlightController spotlightController = FindObjectOfType<SpotlightController>();
             if (spotlightController != null)
             {
                 spotlightController.SwitchToNextTarget();
@@ -67,6 +67,10 @@ public class DoorController : MonoBehaviour
         hasSwitchedTargets = false; // Reset the flag when the player exits the trigger
     }
 
+    public void ResetSwitchedTargetsFlag()
+    {
+        hasSwitchedTargets = false;
+    }
 
     private void OpenDoor()
     {
