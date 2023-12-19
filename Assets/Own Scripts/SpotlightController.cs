@@ -60,7 +60,7 @@ public class SpotlightController : MonoBehaviour
     }
 
 
-    public void SwitchToNextTarget()
+    /*public void SwitchToNextTarget()
     {
         if (targetObjects.Count > 0)
         {
@@ -88,6 +88,57 @@ public class SpotlightController : MonoBehaviour
             currentTarget = nextTarget;
             this.targetIndex = targetIndex; // Update the public targetIndex
             currentFlowTarget = nextFlowTarget;
+        }
+    }*/
+
+    public void SwitchToNextTarget()
+    {
+        if (targetObjects.Count > 0)
+        {
+            // Switch to the next target in the list
+            int targetIndex = (this.targetIndex + 1) % targetObjects.Count;
+            int subTargetIndex = targetObjects[targetIndex].targets.IndexOf(currentTarget);
+
+            // Check if there are targets in the current targetObjects
+            if (targetObjects[targetIndex].targets.Count > 0)
+            {
+                // Ensure subTargetIndex is within bounds
+                subTargetIndex = (subTargetIndex + 1) % targetObjects[targetIndex].targets.Count;
+
+                Transform nextTarget = targetObjects[targetIndex].targets[subTargetIndex];
+                Transform nextFlowTarget = null;
+
+                // Check if there are more than one targets in the list
+                if (targetObjects[targetIndex].targets.Count > 1)
+                {
+                    // Ensure subTargetIndex + 1 is within bounds
+                    int nextFlowTargetIndex = (subTargetIndex + 1) % targetObjects[targetIndex].targets.Count;
+                    nextFlowTarget = targetObjects[targetIndex].targets[nextFlowTargetIndex];
+                }
+
+                // Apply or replace flow materials based on the flags
+                if (targetObjects[targetIndex].replaceAllMaterials)
+                {
+                    ReplaceAllMaterials(nextFlowTarget);
+                }
+                else
+                {
+                    // Remove added flow materials from the current target
+                    RemoveAddedFlowMaterials(currentFlowTarget);
+                }
+
+                // Apply the updated flow materials to the next target
+                ApplyFlowMaterials(nextFlowTarget);
+
+                // Update the current target and flow target
+                currentTarget = nextTarget;
+                this.targetIndex = targetIndex; // Update the public targetIndex
+                currentFlowTarget = nextFlowTarget;
+            }
+            else
+            {
+                Debug.LogWarning("No targets found in the current targetObjects list.");
+            }
         }
     }
 

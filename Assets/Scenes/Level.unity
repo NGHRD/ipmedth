@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.008959909, g: 0.013055959, b: 0.020453434, a: 1}
+  m_IndirectSpecularColor: {r: 0.0090127485, g: 0.013102856, b: 0.020503612, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1256,7 +1256,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 7e-45, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: -4.23331e+30, z: 8.06e-43, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -1835,7 +1835,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6.56e-43, y: 1.39e-43, z: 0, w: -1.6359789e-27}
+  m_BoundingSphereOverride: {x: 0, y: -7.6968767e+31, z: 8.06e-43, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -3632,7 +3632,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 1, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: -2.8396428e+29, z: 8.06e-43, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -5607,64 +5607,19 @@ MonoBehaviour:
     - {fileID: 1105788790}
     currentEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1105788793}
-          m_TargetAssemblyTypeName: TriggerSwitch, Assembly-CSharp
-          m_MethodName: ResetSwitchedTargetsFlag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     flowMaterial: {fileID: 2100000, guid: ecee12717dc9f7a429fdc6966400fd47, type: 2}
     replaceAllMaterials: 0
     addFlowMaterial: 1
   - targets:
-    - {fileID: 1431096193}
     - {fileID: 1194788408}
-    currentEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 626991715}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: PlayOneShot
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 6cfabf3b4c559b944ab0c44df6708654, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 578565961}
-          m_TargetAssemblyTypeName: SpotlightController, Assembly-CSharp
-          m_MethodName: SwitchToNextTarget
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    flowMaterial: {fileID: 2100000, guid: ecee12717dc9f7a429fdc6966400fd47, type: 2}
-    replaceAllMaterials: 0
-    addFlowMaterial: 0
-  - targets:
-    - {fileID: 1839872117}
-    - {fileID: 1194788408}
+    - {fileID: 940188973}
     currentEvent:
       m_PersistentCalls:
         m_Calls: []
     flowMaterial: {fileID: 2100000, guid: ecee12717dc9f7a429fdc6966400fd47, type: 2}
     replaceAllMaterials: 0
-    addFlowMaterial: 0
+    addFlowMaterial: 1
   targetIndex: 0
   currentTarget: {fileID: 0}
 --- !u!114 &578565962
@@ -8910,7 +8865,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: 7.602782e-28}
+  m_BoundingSphereOverride: {x: 0, y: -8.078326e+32, z: 8.06e-43, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -9480,8 +9435,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.30736968, y: 0.9904566, z: 0.9790841}
-  m_Center: {x: -0.3463042, y: -0.008134127, z: 0.0012679533}
+  m_Size: {x: 0.30736968, y: 0.4650244, z: 0.9790841}
+  m_Center: {x: -0.3463042, y: 0.25458196, z: 0.0012679533}
 --- !u!1001 &1015837937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10053,7 +10008,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: 7.602782e-28}
+  m_BoundingSphereOverride: {x: 0, y: 1e-45, z: 0, w: 2.8180974e+20}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -10769,6 +10724,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotlightController: {fileID: 578565961}
+  preferedTargetIndex: 3
+--- !u!114 &1105788796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105788785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919eafabf1bbd6d47b73443beda8064b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spotlightController: {fileID: 578565961}
+  preferedTargetIndex: 7
 --- !u!1 &1106106048
 GameObject:
   m_ObjectHideFlags: 0
@@ -12060,7 +12030,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: 7.602782e-28}
+  m_BoundingSphereOverride: {x: 8.06e-43, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -12869,11 +12839,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1878851666027466018, guid: 1a70fd25380c3e740abf211bbb4a3fe9, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 7.602782e-28
+      value: NaN
       objectReference: {fileID: 0}
     - target: {fileID: 1878851666027466018, guid: 1a70fd25380c3e740abf211bbb4a3fe9, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 1.02e-43
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878851666027466018, guid: 1a70fd25380c3e740abf211bbb4a3fe9, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 2.2689754e+29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878851666027466018, guid: 1a70fd25380c3e740abf211bbb4a3fe9, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 8.09e-43
       objectReference: {fileID: 0}
     - target: {fileID: 1878851666027466021, guid: 1a70fd25380c3e740abf211bbb4a3fe9, type: 3}
       propertyPath: m_IsActive
@@ -13950,6 +13928,10 @@ PrefabInstance:
     - target: {fileID: 3261726447433129618, guid: 4975331d5595c4141ab7f679bcc9e38e, type: 3}
       propertyPath: m_Name
       value: Huis 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261726447433129618, guid: 4975331d5595c4141ab7f679bcc9e38e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3261726447433129618, guid: 4975331d5595c4141ab7f679bcc9e38e, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -15379,7 +15361,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: 7.602782e-28}
+  m_BoundingSphereOverride: {x: 8.09e-43, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -18953,6 +18935,7 @@ GameObject:
   - component: {fileID: 1869662088}
   - component: {fileID: 1869662090}
   - component: {fileID: 1869662089}
+  - component: {fileID: 1869662091}
   m_Layer: 0
   m_Name: DoorHandle (1)
   m_TagString: Untagged
@@ -19005,6 +18988,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7669032377086973160, guid: d4bf14b7a803d754fa699814fd8a4091, type: 3}
+--- !u!114 &1869662091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869662087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919eafabf1bbd6d47b73443beda8064b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spotlightController: {fileID: 578565961}
+  preferedTargetIndex: 2
 --- !u!1001 &1878465322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23663,7 +23660,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: -9.626199e+31}
+  m_BoundingSphereOverride: {x: 0, y: 1.84237e-40, z: 0, w: -2.02824e+31}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
