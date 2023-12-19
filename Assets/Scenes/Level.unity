@@ -886,6 +886,7 @@ GameObject:
   - component: {fileID: 78202300}
   - component: {fileID: 78202299}
   - component: {fileID: 78202298}
+  - component: {fileID: 78202302}
   m_Layer: 0
   m_Name: Candle (2)
   m_TagString: Untagged
@@ -989,6 +990,30 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 78202296}
   m_Mesh: {fileID: -3033996063522644917, guid: 0dd92671fdfc6aa43877d4757f89c1a1, type: 3}
+--- !u!114 &78202302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78202296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectInterest: 1
+  DefaultInterestGroups: []
+  DestroyWhenStateAuthorityLeaves: 0
+  AllowStateAuthorityOverride: 1
+  AoiPositionSource: {fileID: 0}
+  Flags: 2561
+  NetworkGuid:
+    RawGuidValue: 92b5e51082844484b09bb2dcc11aa146
+  NestedObjects:
+  - {fileID: 1050940814}
+  NetworkedBehaviours: []
+  SimulationBehaviours: []
 --- !u!1001 &104438596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2386,7 +2411,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218226024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.021, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3311,10 +3336,15 @@ MonoBehaviour:
   - {fileID: 8695804886606980601}
   - {fileID: 1106106050}
   - {fileID: 5642365478595513695}
+  - {fileID: 3181003791268350665}
   - {fileID: 1238402355}
+  - {fileID: 643347732}
   - {fileID: 182528524}
+  - {fileID: 78202302}
   - {fileID: 1050940814}
+  - {fileID: 1024612149}
   - {fileID: 113368529}
+  - {fileID: 1600229795}
   - {fileID: 1464265210}
   - {fileID: 361675506}
   - {fileID: 916334023}
@@ -5955,6 +5985,7 @@ GameObject:
   - component: {fileID: 578565963}
   - component: {fileID: 578565961}
   - component: {fileID: 578565962}
+  - component: {fileID: 578565964}
   m_Layer: 0
   m_Name: General Controller (1)
   m_TagString: Untagged
@@ -6190,6 +6221,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &578565964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578565960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectInterest: 1
+  DefaultInterestGroups: []
+  DestroyWhenStateAuthorityLeaves: 0
+  AllowStateAuthorityOverride: 1
+  AoiPositionSource: {fileID: 0}
+  Flags: 2561
+  NetworkGuid:
+    RawGuidValue: b2e3370b13494dce884642dd539e3aa2
+  NestedObjects: []
+  NetworkedBehaviours: []
+  SimulationBehaviours: []
 --- !u!1 &579477978
 GameObject:
   m_ObjectHideFlags: 0
@@ -6985,6 +7039,7 @@ GameObject:
   - component: {fileID: 643347729}
   - component: {fileID: 643347727}
   - component: {fileID: 643347728}
+  - component: {fileID: 643347732}
   m_Layer: 0
   m_Name: Candle (1)
   m_TagString: Untagged
@@ -7088,6 +7143,30 @@ Transform:
   m_Father: {fileID: 551221854}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &643347732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643347726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectInterest: 1
+  DefaultInterestGroups: []
+  DestroyWhenStateAuthorityLeaves: 0
+  AllowStateAuthorityOverride: 1
+  AoiPositionSource: {fileID: 0}
+  Flags: 2561
+  NetworkGuid:
+    RawGuidValue: 9d89ce32fe664a53bf18fa6caca68fc8
+  NestedObjects:
+  - {fileID: 182528524}
+  NetworkedBehaviours: []
+  SimulationBehaviours: []
 --- !u!1 &647865446
 GameObject:
   m_ObjectHideFlags: 0
@@ -10633,6 +10712,7 @@ GameObject:
   - component: {fileID: 1024612147}
   - component: {fileID: 1024612146}
   - component: {fileID: 1024612145}
+  - component: {fileID: 1024612149}
   m_Layer: 0
   m_Name: Candle (3)
   m_TagString: Untagged
@@ -10736,6 +10816,30 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024612143}
   m_Mesh: {fileID: -3033996063522644917, guid: 0dd92671fdfc6aa43877d4757f89c1a1, type: 3}
+--- !u!114 &1024612149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024612143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectInterest: 1
+  DefaultInterestGroups: []
+  DestroyWhenStateAuthorityLeaves: 0
+  AllowStateAuthorityOverride: 1
+  AoiPositionSource: {fileID: 0}
+  Flags: 2561
+  NetworkGuid:
+    RawGuidValue: 6d12525f1fa049c08562fb7ca34b9cc8
+  NestedObjects:
+  - {fileID: 113368529}
+  NetworkedBehaviours: []
+  SimulationBehaviours: []
 --- !u!1 &1025992513
 GameObject:
   m_ObjectHideFlags: 0
@@ -13879,6 +13983,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286954103}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1302267867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1302267868}
+  m_Layer: 0
+  m_Name: Visual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1302267868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302267867}
+  m_LocalRotation: {x: -0, y: -0.000000063213506, z: 0.00000002101296, w: 1}
+  m_LocalPosition: {x: -0.011575747, y: -0.000023060627, z: 0.0011437414}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1733786375}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1306300575
 GameObject:
   m_ObjectHideFlags: 0
@@ -17744,6 +17879,7 @@ GameObject:
   - component: {fileID: 1600229793}
   - component: {fileID: 1600229792}
   - component: {fileID: 1600229791}
+  - component: {fileID: 1600229795}
   m_Layer: 0
   m_Name: Candle (4)
   m_TagString: Untagged
@@ -17849,6 +17985,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600229789}
   m_Mesh: {fileID: -3033996063522644917, guid: 0dd92671fdfc6aa43877d4757f89c1a1, type: 3}
+--- !u!114 &1600229795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600229789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectInterest: 1
+  DefaultInterestGroups: []
+  DestroyWhenStateAuthorityLeaves: 0
+  AllowStateAuthorityOverride: 1
+  AoiPositionSource: {fileID: 0}
+  Flags: 2561
+  NetworkGuid:
+    RawGuidValue: 66b8af807184449bbef03bce9622e91c
+  NestedObjects:
+  - {fileID: 1464265210}
+  - {fileID: 361675506}
+  - {fileID: 916334023}
+  NetworkedBehaviours: []
+  SimulationBehaviours: []
 --- !u!1 &1605707333
 GameObject:
   m_ObjectHideFlags: 0
@@ -18876,7 +19038,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1733786375}
   m_Layer: 0
-  m_Name: Visual
+  m_Name: Deur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18896,6 +19058,7 @@ Transform:
   m_Children:
   - {fileID: 8695804886606980599}
   - {fileID: 1869662088}
+  - {fileID: 1302267868}
   m_Father: {fileID: 4406825809085641634}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24729,6 +24892,7 @@ GameObject:
   - component: {fileID: 847175159921540620}
   - component: {fileID: 3181003791268350663}
   - component: {fileID: 3181003791268350664}
+  - component: {fileID: 3181003791268350665}
   m_Layer: 0
   m_Name: Candle
   m_TagString: Untagged
@@ -27213,6 +27377,30 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.12
   m_Center: {x: 0.02, y: 0.26, z: 0.0025294572}
+--- !u!114 &3181003791268350665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207308993086087129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectInterest: 1
+  DefaultInterestGroups: []
+  DestroyWhenStateAuthorityLeaves: 0
+  AllowStateAuthorityOverride: 1
+  AoiPositionSource: {fileID: 0}
+  Flags: 2561
+  NetworkGuid:
+    RawGuidValue: 9dd226dec5af4ff6a800ba24701054f5
+  NestedObjects:
+  - {fileID: 1238402355}
+  NetworkedBehaviours: []
+  SimulationBehaviours: []
 --- !u!1 &3223010646667362918
 GameObject:
   m_ObjectHideFlags: 0
@@ -29586,7 +29774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
   InterpolationSpace: 0
-  InterpolationTarget: {fileID: 1733786375}
+  InterpolationTarget: {fileID: 1302267868}
   InterpolateErrorCorrection: 1
   InterpolatedErrorCorrectionSettings:
     MinRate: 3.3
