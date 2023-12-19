@@ -8,7 +8,7 @@ public class gordijnManager : MonoBehaviour
     public Gordijn_Dicht[] gordijnen;
 
     public SpotlightController spotlightController;
-    private bool hasSwitchedToNextTarget;
+    private bool hasSwitchedToNextTarget = false;
 
     private void Awake()
     {

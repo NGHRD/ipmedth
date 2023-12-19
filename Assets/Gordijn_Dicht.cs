@@ -22,7 +22,7 @@ public class Gordijn_Dicht : MonoBehaviour
     private void Interact()
     {
         isDicht = true;
-        CandleManager.Instance.CheckAllCandlesLit();
+        gordijnManager.Instance.CheckAllGordijnDicht();
     }
 
     public bool IsDicht()

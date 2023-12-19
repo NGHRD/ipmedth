@@ -1,37 +1,43 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-
 public class Radio_oranje : MonoBehaviour
 {
-    // Array of AudioClip for different stations
     private AudioSource audioSource;
-    public bool alreadyPlayed = false;
+    private bool alreadyPlayed = false;
     public AudioClip clip;
-    public bool hasSwitchedToNextTarget = false;
+    private bool hasSwitchedToNextTarget = false;
     public SpotlightController spotlightController;
-
+    public GameObject radioPlek;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.clip = clip;
+        audioSource.playOnAwake = false;
+        audioSource.loop = false;
     }
 
     public void playRadioOranje()
     {
+        Debug.Log("radio wordt afgespeeld");
         if (!alreadyPlayed)
         {
-            audioSource.PlayOneShot(clip, 0.7F);
+            audioSource.Play();
+            StartCoroutine(WaitForClipEnd());
             alreadyPlayed = true;
-            if (!audioSource.isPlaying && !hasSwitchedToNextTarget)
-            {
-                spotlightController.SwitchToNextTarget();
-                hasSwitchedToNextTarget=true;
-            }
         }
+    }
 
+    IEnumerator WaitForClipEnd()
+    {
+        yield return new WaitForSeconds(audioSource.clip.length);
 
+        if (!hasSwitchedToNextTarget)
+        {
+            spotlightController.SwitchToNextTarget();
+            hasSwitchedToNextTarget = true;
+        }
     }
 }

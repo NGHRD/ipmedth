@@ -14,12 +14,12 @@ public class RadioOranje : MonoBehaviour
     {
         if (other.CompareTag("radio") && !isOn) {
 
+
             radioGameObject.gameObject.transform.position = radioLocation.position;
             radioGameObject.gameObject.transform.rotation = radioLocation.rotation;
             isOn = true;
             radio.playRadioOranje();
             Debug.Log("werkt");
-
         }
     }
         

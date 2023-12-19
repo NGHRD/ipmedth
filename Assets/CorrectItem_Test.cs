@@ -5,9 +5,11 @@ using UnityEngine;
 public class CorrectItem_Test : MonoBehaviour
 {
     public GameObject[] rightItems;
+    public SpotlightController spotlightController;
     //public GameObject itemToBeActivated;
 
     private HashSet<GameObject> rightItemsInContainer = new HashSet<GameObject>();
+    private bool hasNotSwitchedToNextTarget = false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,10 +20,12 @@ public class CorrectItem_Test : MonoBehaviour
             Debug.Log("Correct item placed!");
 
             // Check if all the right items are in the container
-            if (rightItemsInContainer.Count == rightItems.Length)
+            if (rightItemsInContainer.Count == rightItems.Length && !hasNotSwitchedToNextTarget)
             {
                 //AllRightItemsPlaced();
                 Debug.Log("alle items zitten erin!");
+                hasNotSwitchedToNextTarget = true;
+                spotlightController.SwitchToNextTarget();
             }
             else
             {
@@ -31,7 +35,6 @@ public class CorrectItem_Test : MonoBehaviour
         else
         {
             Debug.Log("Item doesn't belong in the container.");
-            item.GetComponent<WarpToOriginalPosition>().WarpToOriginal();
         }
     }
 
