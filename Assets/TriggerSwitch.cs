@@ -6,17 +6,19 @@ public class TriggerSwitch : MonoBehaviour
 {
     private bool hasSwitchedTargets = false;
 
+    public SpotlightController spotlightController;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (!hasSwitchedTargets)
+        if (!hasSwitchedTargets && spotlightController != null)
         {
-            SpotlightController spotlightController = FindObjectOfType<SpotlightController>();
-
-            if (spotlightController != null)
-            {
-                spotlightController.SwitchToNextTarget();
-                hasSwitchedTargets = true;
-            }
+            spotlightController.SwitchToNextTarget();
+            hasSwitchedTargets = true;
         }
+    }
+
+    public void ResetSwitchedTargetsFlag()
+    {
+        hasSwitchedTargets = false;
     }
 }

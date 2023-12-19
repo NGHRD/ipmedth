@@ -13,28 +13,31 @@ public class CorrectItem_Test : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameObject item = other.gameObject;
-
-        if (IsRightItem(item) && rightItemsInContainer.Add(item))
+        if (spotlightController.targetIndex == 6)
         {
-            Debug.Log("Correct item placed!");
+            GameObject item = other.gameObject;
 
-            // Check if all the right items are in the container
-            if (rightItemsInContainer.Count == rightItems.Length && !hasNotSwitchedToNextTarget)
+            if (IsRightItem(item) && rightItemsInContainer.Add(item))
             {
-                //AllRightItemsPlaced();
-                Debug.Log("alle items zitten erin!");
-                hasNotSwitchedToNextTarget = true;
-                spotlightController.SwitchToNextTarget();
+                Debug.Log("Correct item placed!");
+
+                // Check if all the right items are in the container
+                if (rightItemsInContainer.Count == rightItems.Length && !hasNotSwitchedToNextTarget)
+                {
+                    //AllRightItemsPlaced();
+                    Debug.Log("alle items zitten erin!");
+                    hasNotSwitchedToNextTarget = true;
+                    spotlightController.SwitchToNextTarget();
+                }
+                else
+                {
+                    Debug.Log("Er Mist nog een Item!");
+                }
             }
             else
             {
-                Debug.Log("Er Mist nog een Item!");
+                Debug.Log("Item doesn't belong in the container.");
             }
-        }
-        else
-        {
-            Debug.Log("Item doesn't belong in the container.");
         }
     }
 

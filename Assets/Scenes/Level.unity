@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0090127485, g: 0.013102856, b: 0.020503612, a: 1}
+  m_IndirectSpecularColor: {r: 0.008959909, g: 0.013055959, b: 0.020453434, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -525,6 +525,7 @@ MonoBehaviour:
     flowMaterial: {fileID: 2100000, guid: ecee12717dc9f7a429fdc6966400fd47, type: 2}
     replaceAllMaterials: 0
     addFlowMaterial: 1
+  targetIndex: 0
   currentTarget: {fileID: 0}
 --- !u!4 &46559266
 Transform:
@@ -5597,19 +5598,7 @@ MonoBehaviour:
     - {fileID: 439274196}
     currentEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 996383794}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
+        m_Calls: []
     flowMaterial: {fileID: 2100000, guid: ecee12717dc9f7a429fdc6966400fd47, type: 2}
     replaceAllMaterials: 0
     addFlowMaterial: 1
@@ -5619,8 +5608,8 @@ MonoBehaviour:
     currentEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1105788792}
-          m_TargetAssemblyTypeName: DoorController, Assembly-CSharp
+        - m_Target: {fileID: 1105788793}
+          m_TargetAssemblyTypeName: TriggerSwitch, Assembly-CSharp
           m_MethodName: ResetSwitchedTargetsFlag
           m_Mode: 1
           m_Arguments:
@@ -5676,6 +5665,7 @@ MonoBehaviour:
     flowMaterial: {fileID: 2100000, guid: ecee12717dc9f7a429fdc6966400fd47, type: 2}
     replaceAllMaterials: 0
     addFlowMaterial: 0
+  targetIndex: 0
   currentTarget: {fileID: 0}
 --- !u!114 &578565962
 MonoBehaviour:
@@ -9390,7 +9380,6 @@ GameObject:
   - component: {fileID: 996383799}
   - component: {fileID: 996383798}
   - component: {fileID: 996383797}
-  - component: {fileID: 996383796}
   - component: {fileID: 996383800}
   - component: {fileID: 996383795}
   m_Layer: 0
@@ -9399,7 +9388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &996383795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9415,19 +9404,6 @@ MonoBehaviour:
   rightItems:
   - {fileID: 253051265}
   spotlightController: {fileID: 578565961}
---- !u!65 &996383796
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996383794}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.6565823, y: 0.9472348, z: 0.99393463}
-  m_Center: {x: 0.17170882, y: 0.017539173, z: -0.003032901}
 --- !u!23 &996383797
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9504,8 +9480,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.37458283, y: 0.46497118, z: 0.9790841}
-  m_Center: {x: -0.3127078, y: 0.25460845, z: 0.0012679533}
+  m_Size: {x: 0.30736968, y: 0.9904566, z: 0.9790841}
+  m_Center: {x: -0.3463042, y: -0.008134127, z: 0.0012679533}
 --- !u!1001 &1015837937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9614,7 +9590,6 @@ MonoBehaviour:
   - {fileID: 760755095}
   - {fileID: 1122208561}
   - {fileID: 1286954105}
-  - {fileID: 0}
   spotlightController: {fileID: 578565961}
 --- !u!4 &1023624463
 Transform:
@@ -10781,6 +10756,19 @@ MonoBehaviour:
   spotlightController: {fileID: 578565961}
   door: {fileID: 7219248}
   orientation: 1
+--- !u!114 &1105788793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105788785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919eafabf1bbd6d47b73443beda8064b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spotlightController: {fileID: 578565961}
 --- !u!1 &1106106048
 GameObject:
   m_ObjectHideFlags: 0
@@ -23675,7 +23663,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 5.65e-43, y: 1.39e-43, z: 0, w: -8.798248e-36}
+  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: -9.626199e+31}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
