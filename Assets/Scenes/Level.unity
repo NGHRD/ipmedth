@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0090127485, g: 0.013102856, b: 0.020503612, a: 1}
+  m_IndirectSpecularColor: {r: 0.008959909, g: 0.013055959, b: 0.020453434, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -876,6 +876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   candleLight: {fileID: 1050940813}
   litMaterial: {fileID: 2100000, guid: 068cb7130d773154eb1dff5d0e659182, type: 2}
+  spotlightController: {fileID: 578565961}
 --- !u!23 &78202300
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5612,14 +5613,56 @@ MonoBehaviour:
     replaceAllMaterials: 0
     addFlowMaterial: 1
   - targets:
+    - {fileID: 738921666}
     - {fileID: 1194788408}
-    - {fileID: 940188973}
+    currentEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 626991717}
+          m_TargetAssemblyTypeName: AudioScript, Assembly-CSharp
+          m_MethodName: PlayAudioAndSwitchTarget
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 01ccff8eb58afb74493fb76c25b123c9, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    flowMaterial: {fileID: 2100000, guid: ecee12717dc9f7a429fdc6966400fd47, type: 2}
+    replaceAllMaterials: 0
+    addFlowMaterial: 0
+  - targets:
+    - {fileID: 1194788408}
+    - {fileID: 1194788408}
     currentEvent:
       m_PersistentCalls:
         m_Calls: []
     flowMaterial: {fileID: 2100000, guid: ecee12717dc9f7a429fdc6966400fd47, type: 2}
     replaceAllMaterials: 0
-    addFlowMaterial: 1
+    addFlowMaterial: 0
+  - targets:
+    - {fileID: 1194788408}
+    - {fileID: 1194788408}
+    currentEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 959501474}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: PlayOneShot
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 8064e8c70eb2ffa438eba09902d35145, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    flowMaterial: {fileID: 2100000, guid: ecee12717dc9f7a429fdc6966400fd47, type: 2}
+    replaceAllMaterials: 0
+    addFlowMaterial: 0
   targetIndex: 0
   currentTarget: {fileID: 0}
 --- !u!114 &578565962
@@ -6149,6 +6192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 626991716}
   - component: {fileID: 626991715}
+  - component: {fileID: 626991717}
   m_Layer: 0
   m_Name: GeklopOpDeur
   m_TagString: Untagged
@@ -6166,7 +6210,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6cfabf3b4c559b944ab0c44df6708654, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -6267,6 +6311,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &626991717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626991714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f5fb5081276554f95ddd9d00c442b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spotlightController: {fileID: 578565961}
 --- !u!1 &627724631
 GameObject:
   m_ObjectHideFlags: 0
@@ -6399,6 +6456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   candleLight: {fileID: 182528523}
   litMaterial: {fileID: 2100000, guid: 068cb7130d773154eb1dff5d0e659182, type: 2}
+  spotlightController: {fileID: 578565961}
 --- !u!135 &643347728
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9090,6 +9148,148 @@ Transform:
   m_Father: {fileID: 236036684}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 100, z: 0}
+--- !u!1 &959501472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 959501475}
+  - component: {fileID: 959501474}
+  - component: {fileID: 959501473}
+  m_Layer: 0
+  m_Name: DuitsersPraten
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &959501473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959501472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f5fb5081276554f95ddd9d00c442b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spotlightController: {fileID: 578565961}
+--- !u!82 &959501474
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959501472}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &959501475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959501472}
+  m_LocalRotation: {x: -0, y: 0.99999994, z: -0, w: 0.00040739216}
+  m_LocalPosition: {x: 7.701, y: 1.39, z: 1.116}
+  m_LocalScale: {x: 0.24579005, y: 0.25706, z: 0.56998014}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &982055208 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 6a2fea5da1db506438acebab08f8847f, type: 3}
@@ -9628,6 +9828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   candleLight: {fileID: 113368528}
   litMaterial: {fileID: 2100000, guid: 068cb7130d773154eb1dff5d0e659182, type: 2}
+  spotlightController: {fileID: 578565961}
 --- !u!23 &1024612147
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16257,6 +16458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   candleLight: {fileID: 1464265208}
   litMaterial: {fileID: 2100000, guid: 068cb7130d773154eb1dff5d0e659182, type: 2}
+  spotlightController: {fileID: 578565961}
 --- !u!23 &1600229793
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23660,7 +23862,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 1.84237e-40, z: 0, w: -2.02824e+31}
+  m_BoundingSphereOverride: {x: 9.1835e-41, y: 7.43868e-39, z: 9.78048e-39, w: 1.37753e-40}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -25259,6 +25461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   candleLight: {fileID: 1238402354}
   litMaterial: {fileID: 2100000, guid: 068cb7130d773154eb1dff5d0e659182, type: 2}
+  spotlightController: {fileID: 578565961}
 --- !u!135 &3181003791268350664
 SphereCollider:
   m_ObjectHideFlags: 0

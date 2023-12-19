@@ -8,6 +8,7 @@ public class Candle : MonoBehaviour
     public Material litMaterial; // Reference to the lit material
     private bool isLit = false;
     private MeshRenderer meshRenderer;
+    public SpotlightController spotlightController;
 
     private void Start()
     {
@@ -25,11 +26,16 @@ public class Candle : MonoBehaviour
     {
         if (other.CompareTag("Lighter") && !isLit)
         {
-            Interact();
+            turnOnCandle();
+        }
+
+        if (spotlightController.targetIndex == 9 && other.CompareTag("Hands") && isLit)
+        {
+            turnOffCandle();
         }
     }
 
-    private void Interact()
+    private void turnOnCandle()
     {
         isLit = true;
 
@@ -43,6 +49,24 @@ public class Candle : MonoBehaviour
         }
 
         CandleManager.Instance.CheckAllCandlesLit();
+    }
+
+    private void turnOffCandle()
+    {
+        isLit = false;
+
+        // Remove the lit material from the mesh renderer
+        if (meshRenderer != null && litMaterial != null)
+        {
+            var materials = new List<Material>(meshRenderer.materials);
+            materials.Remove(litMaterial); // Remove the lit material
+            meshRenderer.materials = materials.ToArray();
+            candleLight.SetActive(false);
+            Debug.Log("is uit nu");
+        }
+
+
+        CandleManager.Instance.CheckAllCandlesUnLit();
     }
 
     public bool IsLit()
