@@ -22,6 +22,7 @@ public class SpotlightController : MonoBehaviour
 
     public Transform currentTarget;
     private Transform currentFlowTarget;
+    public AudioController audioController;
     private Dictionary<MeshRenderer, List<Material>> originalMaterials = new Dictionary<MeshRenderer, List<Material>>();
     private Dictionary<MeshRenderer, List<Material>> originalFlowMaterials = new Dictionary<MeshRenderer, List<Material>>();
 
@@ -134,6 +135,12 @@ public class SpotlightController : MonoBehaviour
                 currentTarget = nextTarget;
                 this.targetIndex = targetIndex; // Update the public targetIndex
                 currentFlowTarget = nextFlowTarget;
+
+                // Play audio at the current target index
+                if (audioController != null)
+                {
+                    audioController.PlayAudioAtTargetIndex(targetIndex);
+                }
             }
             else
             {

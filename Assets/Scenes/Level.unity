@@ -603,6 +603,7 @@ MonoBehaviour:
     addFlowMaterial: 1
   targetIndex: 0
   currentTarget: {fileID: 0}
+  audioController: {fileID: 0}
 --- !u!4 &46559266
 Transform:
   m_ObjectHideFlags: 0
@@ -6173,6 +6174,7 @@ GameObject:
   - component: {fileID: 578565961}
   - component: {fileID: 578565962}
   - component: {fileID: 578565964}
+  - component: {fileID: 578565965}
   m_Layer: 0
   m_Name: General Controller (1)
   m_TagString: Untagged
@@ -6378,6 +6380,7 @@ MonoBehaviour:
     addFlowMaterial: 0
   targetIndex: 0
   currentTarget: {fileID: 0}
+  audioController: {fileID: 578565965}
 --- !u!114 &578565962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6431,6 +6434,31 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours: []
   SimulationBehaviours: []
+--- !u!114 &578565965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578565960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a23017827f1054043899c7b8f656ae3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 5b29821f62c24f844a818cf33290b9ec, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 599226a09e69c314eaa7ff6446042eaf, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  audioSource: {fileID: 833719067}
 --- !u!1 &579477978
 GameObject:
   m_ObjectHideFlags: 0
@@ -13705,8 +13733,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bd440b3941143d4d8691ad61e65e8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ringSound: {fileID: 8300000, guid: 74284eaba7126f74b8309d0ba3ab90e1, type: 3}
-  newClip: {fileID: 8300000, guid: 01ccff8eb58afb74493fb76c25b123c9, type: 3}
+  ringSound: {fileID: 8300000, guid: 199f64d63daea90408e1c7d876ac88e4, type: 3}
+  newClip: {fileID: 8300000, guid: 130eb425b6593544bb3d762d98d1955e, type: 3}
   spotlightController: {fileID: 578565961}
   isPlayingNewClip: 0
 --- !u!114 &1274160344
