@@ -1,4 +1,5 @@
-using System.Collections;
+using System;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
@@ -33,7 +34,7 @@ public class TextSequenceController : MonoBehaviour
         }
     }
 
-    public IEnumerator SequenceCoroutine()
+    public async Task SequenceCoroutineAsync()
     {
         while (currentIndex < mediaSequences.Length)
         {
@@ -52,10 +53,7 @@ public class TextSequenceController : MonoBehaviour
                 Debug.Log("Playing audio: " + currentSequence.audioClip.name);
             }
 
-            while (audioSource.isPlaying)
-            {
-                yield return null;
-            }
+            await WaitWhile(() => audioSource.isPlaying);
 
             currentIndex++;
             Debug.Log("Advancing to the next index: " + currentIndex);
@@ -64,6 +62,14 @@ public class TextSequenceController : MonoBehaviour
         isSequenceCompleted = true;
         Debug.Log("All sequences completed.");
         TeleportToLocation();
+    }
+
+    async Task WaitWhile(Func<bool> condition)
+    {
+        while (condition.Invoke())
+        {
+            await Task.Yield();
+        }
     }
 
     void TeleportToLocation()

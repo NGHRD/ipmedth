@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
 public class StartGameButton : MonoBehaviour
 {
@@ -13,22 +14,21 @@ public class StartGameButton : MonoBehaviour
 
     private bool sequenceStarted = false;
 
-    private void OnTriggerEnter(Collider other)
+    private async void OnTriggerEnter(Collider other)
     {
         if (!sequenceStarted && other.CompareTag(TagPlayer))
         {
             Debug.Log("Trigger entered!");
             // Start the coroutine after a delay
-            StartSequenceCoroutine();
+            await StartSequenceCoroutineAsync();
         }
     }
 
-
-    void StartSequenceCoroutine()
+    async Task StartSequenceCoroutineAsync()
     {
         Debug.Log("Starting sequence coroutine!");
         // Trigger the sequence coroutine
-        sequenceController.StartCoroutine(sequenceController.SequenceCoroutine());
+        await sequenceController.SequenceCoroutineAsync();
 
         // Set the flag to prevent starting the sequence multiple times
         sequenceStarted = true;
