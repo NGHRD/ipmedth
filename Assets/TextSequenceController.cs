@@ -70,7 +70,7 @@ public class TextSequenceController : MonoBehaviour
     {
         if (isSequenceCompleted && teleportLocation != null)
         {
-            moveObjectsOnVideoEnd.MovePlayersToNewPosition(teleportLocation);
+            moveObjectsOnVideoEnd.MovePlayersToNewPosition(teleportLocation, false);
             StartCoroutine(moveObjectsOnVideoEnd.CheckVideoEnd());
             Debug.Log("Teleporting to location: " + teleportLocation);
         }
