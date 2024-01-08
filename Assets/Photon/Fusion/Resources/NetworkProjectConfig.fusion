@@ -6,7 +6,7 @@
     "ServerPhysicsMode": 0,
     "UseLagCompensation": true,
     "LagCompensation": {
-        "HitboxBufferSize": 24,
+        "HitboxBufferSize": 12,
         "HitboxCapacity": 512,
         "ExpansionFactor": 0.20000000298023225,
         "Optimize": false,
