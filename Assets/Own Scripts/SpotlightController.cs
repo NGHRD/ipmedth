@@ -18,6 +18,7 @@ public class SpotlightController : MonoBehaviour
     }
 
     public List<TransformEventPair> targetObjects;
+    public int targetIndex = 0; // Public property for the target index
 
     public Transform currentTarget;
     private Transform currentFlowTarget;
@@ -35,8 +36,8 @@ public class SpotlightController : MonoBehaviour
         // Initialize the current target
         if (targetObjects.Count > 0)
         {
-            currentTarget = targetObjects[0].targets[0];
-            currentFlowTarget = targetObjects[0].targets[1];
+            currentTarget = targetObjects[targetIndex].targets[0];
+            currentFlowTarget = targetObjects[targetIndex].targets[1];
         }
 
         // Cache the original materials for all targets and flow targets
@@ -59,12 +60,13 @@ public class SpotlightController : MonoBehaviour
         }
     }
 
-    public void SwitchToNextTarget()
+
+    /*public void SwitchToNextTarget()
     {
         if (targetObjects.Count > 0)
         {
             // Switch to the next target in the list
-            int targetIndex = (targetObjects.FindIndex(item => item.targets.Contains(currentTarget)) + 1) % targetObjects.Count;
+            int targetIndex = (this.targetIndex + 1) % targetObjects.Count;
             int subTargetIndex = targetObjects[targetIndex].targets.IndexOf(currentTarget);
             subTargetIndex = (subTargetIndex + 1) % targetObjects[targetIndex].targets.Count;
             Transform nextTarget = targetObjects[targetIndex].targets[subTargetIndex];
@@ -85,7 +87,7 @@ public class SpotlightController : MonoBehaviour
 
             // Update the current target and flow target
             currentTarget = nextTarget;
-            Debug.Log(targetIndex);
+            this.targetIndex = targetIndex; // Update the public targetIndex
             currentFlowTarget = nextFlowTarget;
         }
     }*/
