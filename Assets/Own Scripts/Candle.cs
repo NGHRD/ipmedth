@@ -29,7 +29,7 @@ public class Candle : MonoBehaviour
             turnOnCandle();
         }
 
-        if (spotlightController.targetIndex == 9 && other.CompareTag("Hands") && isLit)
+        if (spotlightController.targetIndex == 2 && other.CompareTag("Hands") && isLit)
         {
             turnOffCandle();
         }
