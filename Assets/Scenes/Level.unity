@@ -6204,6 +6204,8 @@ MonoBehaviour:
   videoPlayer: {fileID: 780401994}
   cameraLight: {fileID: 1382143584}
   roomPosition: {fileID: 1137856078}
+  audioSource: {fileID: 833719067}
+  clip: {fileID: 8300000, guid: 331c12d64f2f8eb4ca46807d2a3f17b2, type: 3}
 --- !u!4 &578565963
 Transform:
   m_ObjectHideFlags: 0
@@ -7985,7 +7987,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780401993}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 30d0855bc0957644cbb1708efadfcb21, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 90514d58226d8234d8fcaec35d289dbc, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -8757,7 +8759,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -11571,7 +11573,7 @@ MonoBehaviour:
   - {fileID: 1050493182}
   teleportLocation: {fileID: 1509699342}
   moveObjectsOnVideoEnd: {fileID: 578565962}
-  audioSource: {fileID: 560271293}
+  audioSource: {fileID: 833719067}
 --- !u!114 &1101130392
 MonoBehaviour:
   m_ObjectHideFlags: 0
