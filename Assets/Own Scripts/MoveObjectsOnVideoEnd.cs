@@ -64,6 +64,7 @@ public class MoveObjectsOnVideoEnd : MonoBehaviour
         foreach (GameObject player in players)
         {
             player.transform.position = newPosition.transform.position;
+            player.transform.rotation = newPosition.transform.rotation;
         }
 
         if (audioPrefered)
