@@ -7,8 +7,6 @@ public class MoveObjectsOnVideoEnd : MonoBehaviour
     public VideoPlayer videoPlayer;
     public GameObject cameraLight;
     public GameObject roomPosition; // Set the new position for the players
-    public AudioSource audioSource;
-    public AudioClip clip;
 
     private bool videoPlaying = false;
 
@@ -34,11 +32,12 @@ public class MoveObjectsOnVideoEnd : MonoBehaviour
         cameraLight.SetActive(true);
 
         // Wait until the video has ended
-        yield return new WaitForSeconds((float)videoPlayer.clip.length);
+        yield return new WaitUntil(() => !videoPlayer.isPlaying);
+
         // Video has ended
         Debug.Log("Video has ended");
 
-        MovePlayersToNewPosition(roomPosition, true);
+        MovePlayersToNewPosition(roomPosition);
 
         videoPlaying = false;
 
@@ -57,7 +56,7 @@ public class MoveObjectsOnVideoEnd : MonoBehaviour
         cameraLight.SetActive(false);
     }
 
-    public void MovePlayersToNewPosition(GameObject newPosition, bool audioPrefered)
+    public void MovePlayersToNewPosition(GameObject newPosition)
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
@@ -65,12 +64,5 @@ public class MoveObjectsOnVideoEnd : MonoBehaviour
         {
             player.transform.position = newPosition.transform.position;
         }
-
-        if (audioPrefered)
-        {
-            audioSource.clip = clip;
-            audioSource.Play();
-        }
-        else { return; }
     }
 }
