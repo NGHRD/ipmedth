@@ -31,20 +31,4 @@ public class CandleManager : MonoBehaviour
             hasSwitchedToNextTarget = true; // Update the flag
         }
     }
-
-    public void CheckAllCandlesUnLit()
-    {
-        foreach (Candle candle in candles)
-        {
-            if (candle.IsLit())
-                return;
-        }
-
-        // Call SwitchToNextTarget only if it hasn't been called before
-
-
-        spotlightController.SwitchToNextTarget();
-        Debug.Log("Spotlight yes");
-
-    }
 }
