@@ -45,6 +45,30 @@ public class Candle : MonoBehaviour
         CandleManager.Instance.CheckAllCandlesLit();
     }
 
+    private void turnOffCandle()
+    {
+        isLit = false;
+
+        // Remove the last material from the mesh renderer
+        if (meshRenderer != null && litMaterial != null)
+        {
+            var materials = new List<Material>(meshRenderer.materials);
+
+            if (materials.Count > 0)
+            {
+                materials.RemoveAt(materials.Count - 1); // Remove the last material
+                meshRenderer.materials = materials.ToArray();
+            }
+
+            candleLight.SetActive(false);
+            Debug.Log("is uit nu");
+        }
+
+        CandleManager.Instance.CheckAllCandlesUnLit();
+    }
+
+
+
     public bool IsLit()
     {
         return isLit;
