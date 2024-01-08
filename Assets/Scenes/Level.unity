@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.008959909, g: 0.013055959, b: 0.020453434, a: 1}
+  m_IndirectSpecularColor: {r: 0.009012722, g: 0.013102869, b: 0.020503528, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1283,11 +1283,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-<<<<<<< HEAD
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-=======
-  m_BoundingSphereOverride: {x: 0, y: -4.23331e+30, z: 8.06e-43, w: 0}
->>>>>>> parent of c7aa911 (Add teleport to GameEndRoom)
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -1866,11 +1862,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-<<<<<<< HEAD
   m_BoundingSphereOverride: {x: 4e-45, y: 2.4123e-41, z: 1.02e-43, w: 0}
-=======
-  m_BoundingSphereOverride: {x: 0, y: -7.6968767e+31, z: 8.06e-43, w: 0}
->>>>>>> parent of c7aa911 (Add teleport to GameEndRoom)
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -2367,148 +2359,6 @@ Transform:
   m_Father: {fileID: 185560642}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
-<<<<<<< HEAD
-=======
---- !u!1 &249221307
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 249221308}
-  - component: {fileID: 249221311}
-  - component: {fileID: 249221310}
-  - component: {fileID: 249221309}
-  m_Layer: 0
-  m_Name: Spot Light (7)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
-  m_IsActive: 1
---- !u!4 &249221308
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249221307}
-  m_LocalRotation: {x: -0.7049415, y: 0.055295087, z: -0.055295102, w: -0.7049415}
-  m_LocalPosition: {x: -2.159, y: 1.74, z: -6.055}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1600229790}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -270, y: 0, z: 8.97}
---- !u!114 &249221309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249221307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 1
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
---- !u!108 &249221310
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249221307}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 0
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.7647059, b: 0.654902, a: 1}
-  m_Intensity: 0.3
-  m_Range: 2
-  m_SpotAngle: 171.14154
-  m_InnerSpotAngle: 112.99628
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 2
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: NaN}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!114 &249221311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249221307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectInterest: 1
-  DefaultInterestGroups: []
-  DestroyWhenStateAuthorityLeaves: 0
-  AllowStateAuthorityOverride: 1
-  AoiPositionSource: {fileID: 0}
-  Flags: 2561
-  NetworkGuid:
-    RawGuidValue: f63dfe3a272247bfa2ead1596f8d05c7
-  NestedObjects: []
-  NetworkedBehaviours: []
-  SimulationBehaviours: []
->>>>>>> parent of c7aa911 (Add teleport to GameEndRoom)
 --- !u!1 &253051265 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4098616816353200686, guid: 782295ac1b6faa745bdea6d72a0dfc1a, type: 3}
@@ -2890,11 +2740,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-<<<<<<< HEAD
   - {fileID: 2100000, guid: 63da46223b25e71458b02d5b22c440c3, type: 2}
-=======
-  - {fileID: 2100000, guid: 42349a83c60d1a6439616a4c7238cea2, type: 2}
->>>>>>> parent of c7aa911 (Add teleport to GameEndRoom)
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3813,11 +3659,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-<<<<<<< HEAD
   m_BoundingSphereOverride: {x: 0, y: 7.1e-44, z: 0, w: 5.0810537e+32}
-=======
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
->>>>>>> parent of c7aa911 (Add teleport to GameEndRoom)
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -5644,11 +5486,6 @@ GameObject:
   - component: {fileID: 578565963}
   - component: {fileID: 578565961}
   - component: {fileID: 578565962}
-<<<<<<< HEAD
-=======
-  - component: {fileID: 578565964}
-  - component: {fileID: 578565965}
->>>>>>> parent of c7aa911 (Add teleport to GameEndRoom)
   m_Layer: 0
   m_Name: General Controller (1)
   m_TagString: Untagged
@@ -5898,57 +5735,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
---- !u!114 &578565964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578565960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectInterest: 1
-  DefaultInterestGroups: []
-  DestroyWhenStateAuthorityLeaves: 0
-  AllowStateAuthorityOverride: 1
-  AoiPositionSource: {fileID: 0}
-  Flags: 2561
-  NetworkGuid:
-    RawGuidValue: b2e3370b13494dce884642dd539e3aa2
-  NestedObjects: []
-  NetworkedBehaviours: []
-  SimulationBehaviours: []
---- !u!114 &578565965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578565960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a23017827f1054043899c7b8f656ae3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioClips:
-  - {fileID: 0}
-  - {fileID: 8300000, guid: 5b29821f62c24f844a818cf33290b9ec, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 8300000, guid: 599226a09e69c314eaa7ff6446042eaf, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 8300000, guid: 4944ede0c1aab134d8834d8f806280dd, type: 3}
-  audioSource: {fileID: 833719067}
->>>>>>> parent of c7aa911 (Add teleport to GameEndRoom)
 --- !u!1 &579477978
 GameObject:
   m_ObjectHideFlags: 0
@@ -6564,45 +6350,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
-=======
---- !u!114 &626991717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626991714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3f5fb5081276554f95ddd9d00c442b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spotlightController: {fileID: 578565961}
---- !u!114 &626991718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626991714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectInterest: 1
-  DefaultInterestGroups: []
-  DestroyWhenStateAuthorityLeaves: 0
-  AllowStateAuthorityOverride: 1
-  AoiPositionSource: {fileID: 0}
-  Flags: 2561
-  NetworkGuid:
-    RawGuidValue: dc8b4693cb37465ab6c90bae418f1f26
-  NestedObjects: []
-  NetworkedBehaviours: []
-  SimulationBehaviours: []
->>>>>>> parent of c7aa911 (Add teleport to GameEndRoom)
 --- !u!1 &627724631
 GameObject:
   m_ObjectHideFlags: 0
@@ -7613,7 +7360,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780401993}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 30d0855bc0957644cbb1708efadfcb21, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 90514d58226d8234d8fcaec35d289dbc, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -10161,40 +9908,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025992513}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
-=======
---- !u!1 &1030548679
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1030548680}
-  m_Layer: 0
-  m_Name: Visual
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!4 &1030548680
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1030548679}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1101130388}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> parent of c7aa911 (Add teleport to GameEndRoom)
 --- !u!1 &1050493182
 GameObject:
   m_ObjectHideFlags: 0
@@ -10425,11 +10138,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-<<<<<<< HEAD
   m_BoundingSphereOverride: {x: 3e-45, y: 9.52e-42, z: 1.02e-43, w: 0}
-=======
-  m_BoundingSphereOverride: {x: 0, y: 1e-45, z: 0, w: 2.8180974e+20}
->>>>>>> parent of c7aa911 (Add teleport to GameEndRoom)
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -11132,60 +10841,6 @@ MonoBehaviour:
   spotlightController: {fileID: 578565961}
   door: {fileID: 716551584}
   orientation: 1
-<<<<<<< HEAD
-=======
---- !u!114 &1105788793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105788785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 919eafabf1bbd6d47b73443beda8064b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spotlightController: {fileID: 578565961}
-  preferedTargetIndex: 3
---- !u!114 &1105788796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105788785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 919eafabf1bbd6d47b73443beda8064b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spotlightController: {fileID: 578565961}
-  preferedTargetIndex: 7
---- !u!114 &1105788799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105788785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectInterest: 1
-  DefaultInterestGroups: []
-  DestroyWhenStateAuthorityLeaves: 0
-  AllowStateAuthorityOverride: 1
-  AoiPositionSource: {fileID: 0}
-  Flags: 133633
-  NetworkGuid:
-    RawGuidValue: cbdb65d54cad4c029a05427546403429
-  NestedObjects: []
-  NetworkedBehaviours: []
-  SimulationBehaviours: []
->>>>>>> parent of c7aa911 (Add teleport to GameEndRoom)
 --- !u!1 &1106106048
 GameObject:
   m_ObjectHideFlags: 0
@@ -12534,11 +12189,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-<<<<<<< HEAD
   m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: -33777.094}
-=======
-  m_BoundingSphereOverride: {x: 8.06e-43, y: 0, z: 0, w: 0}
->>>>>>> parent of c7aa911 (Add teleport to GameEndRoom)
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -13347,31 +12998,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1878851666027466018, guid: 1a70fd25380c3e740abf211bbb4a3fe9, type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: NaN
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1878851666027466018, guid: 1a70fd25380c3e740abf211bbb4a3fe9, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-<<<<<<< HEAD
       value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 1878851666027466018, guid: 1a70fd25380c3e740abf211bbb4a3fe9, type: 3}
       propertyPath: m_BoundingSphereOverride.y
       value: 2.5029e-41
-=======
-      value: 0
->>>>>>> parent of c7aa911 (Add teleport to GameEndRoom)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1878851666027466018, guid: 1a70fd25380c3e740abf211bbb4a3fe9, type: 3}
-      propertyPath: m_BoundingSphereOverride.y
-      value: 2.2689754e+29
       objectReference: {fileID: 0}
     - target: {fileID: 1878851666027466018, guid: 1a70fd25380c3e740abf211bbb4a3fe9, type: 3}
       propertyPath: m_BoundingSphereOverride.z
-<<<<<<< HEAD
       value: 1.02e-43
-=======
-      value: 8.09e-43
->>>>>>> parent of c7aa911 (Add teleport to GameEndRoom)
       objectReference: {fileID: 0}
     - target: {fileID: 1878851666027466021, guid: 1a70fd25380c3e740abf211bbb4a3fe9, type: 3}
       propertyPath: m_IsActive
@@ -15877,11 +15516,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-<<<<<<< HEAD
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 1e-45}
-=======
-  m_BoundingSphereOverride: {x: 8.09e-43, y: 0, z: 0, w: 0}
->>>>>>> parent of c7aa911 (Add teleport to GameEndRoom)
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -19507,23 +19142,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7669032377086973160, guid: d4bf14b7a803d754fa699814fd8a4091, type: 3}
-<<<<<<< HEAD
-=======
---- !u!114 &1869662091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869662087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 919eafabf1bbd6d47b73443beda8064b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spotlightController: {fileID: 578565961}
-  preferedTargetIndex: 2
->>>>>>> parent of c7aa911 (Add teleport to GameEndRoom)
 --- !u!1001 &1878465322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20685,37 +20303,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973108274}
   m_Mesh: {fileID: -4814281653530660346, guid: 71707e26c5eaa6740b3f00434db0d641, type: 3}
-<<<<<<< HEAD
-=======
---- !u!1 &1980148469 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f768596b2314fef4dbeef01a9b8a6b05, type: 3}
-  m_PrefabInstance: {fileID: 1471446753}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1980148470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980148469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectInterest: 1
-  DefaultInterestGroups: []
-  DestroyWhenStateAuthorityLeaves: 0
-  AllowStateAuthorityOverride: 1
-  AoiPositionSource: {fileID: 0}
-  Flags: 2561
-  NetworkGuid:
-    RawGuidValue: 0091273ddcc14f3db0c77457cc824de1
-  NestedObjects: []
-  NetworkedBehaviours: []
-  SimulationBehaviours: []
->>>>>>> parent of c7aa911 (Add teleport to GameEndRoom)
 --- !u!1 &1981654939
 GameObject:
   m_ObjectHideFlags: 0
@@ -24213,11 +23800,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-<<<<<<< HEAD
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 1e-45}
-=======
-  m_BoundingSphereOverride: {x: 2.2227777e-38, y: 9.1858e-41, z: -2.4405384e-30, w: 1.83716e-40}
->>>>>>> parent of c7aa911 (Add teleport to GameEndRoom)
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
