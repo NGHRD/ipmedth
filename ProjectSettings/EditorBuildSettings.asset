@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Bios.unity
     guid: a2c4ae14010cc9e4ba75c098bc60b48f
   - enabled: 1
-    path: Assets/Scenes/Level.unity
+    path: Assets/Scenes/Ludiek.unity
     guid: 3651a76d14cb8454c96a9486ec26f729
   - enabled: 0
     path: Assets/Scenes/AlternativeHardwareBasedGrabbingDemo/Scenes/SampleHardwareBasedGrabbingScene.unity
