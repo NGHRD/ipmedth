@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.008959909, g: 0.013055959, b: 0.020453434, a: 1}
+  m_IndirectSpecularColor: {r: 0.009012722, g: 0.013102869, b: 0.020503528, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6123,6 +6123,27 @@ MonoBehaviour:
     replaceAllMaterials: 0
     addFlowMaterial: 0
   - targets:
+    - {fileID: 1194788408}
+    - {fileID: 1194788408}
+    currentEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 578565966}
+          m_TargetAssemblyTypeName: MoveObjectsToGameEnd, Assembly-CSharp
+          m_MethodName: MovePlayersToNewPosition
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1837267593}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    flowMaterial: {fileID: 2100000, guid: ecee12717dc9f7a429fdc6966400fd47, type: 2}
+    replaceAllMaterials: 0
+    addFlowMaterial: 0
+  - targets:
     - {fileID: 5642365478595513693}
     - {fileID: 3391675629272478195}
     currentEvent:
@@ -6251,7 +6272,7 @@ MonoBehaviour:
     currentEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 626991719}
+        - m_Target: {fileID: 626991717}
           m_TargetAssemblyTypeName: AudioScript, Assembly-CSharp
           m_MethodName: PlayAudioAndSwitchTarget
           m_Mode: 2
@@ -6284,27 +6305,6 @@ MonoBehaviour:
     flowMaterial: {fileID: 2100000, guid: ecee12717dc9f7a429fdc6966400fd47, type: 2}
     replaceAllMaterials: 0
     addFlowMaterial: 0
-  - targets:
-    - {fileID: 1194788408}
-    - {fileID: 1194788408}
-    currentEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 578565966}
-          m_TargetAssemblyTypeName: MoveObjectsToGameEnd, Assembly-CSharp
-          m_MethodName: MovePlayersToNewPosition
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1837267593}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    flowMaterial: {fileID: 2100000, guid: ecee12717dc9f7a429fdc6966400fd47, type: 2}
-    replaceAllMaterials: 0
-    addFlowMaterial: 0
   targetIndex: 0
   currentTarget: {fileID: 0}
   audioController: {fileID: 578565965}
@@ -6323,8 +6323,6 @@ MonoBehaviour:
   videoPlayer: {fileID: 780401994}
   cameraLight: {fileID: 1382143584}
   roomPosition: {fileID: 1137856078}
-  audioSource: {fileID: 833719067}
-  clip: {fileID: 8300000, guid: 78ace5dcf06f52a4e9fb57a638bcc4ad, type: 3}
 --- !u!4 &578565963
 Transform:
   m_ObjectHideFlags: 0
@@ -6378,13 +6376,13 @@ MonoBehaviour:
   audioClips:
   - {fileID: 0}
   - {fileID: 8300000, guid: 5b29821f62c24f844a818cf33290b9ec, type: 3}
-  - {fileID: 8300000, guid: 902fdf750382b04479f12c209a1b5cc2, type: 3}
-  - {fileID: 8300000, guid: c5f8b0dd16cc2414eb31be54f5667a75, type: 3}
-  - {fileID: 8300000, guid: 76409d2034a61ad44b72272d714b4a31, type: 3}
-  - {fileID: 8300000, guid: 2497a8e121d61c04d99e4c76daa24672, type: 3}
-  - {fileID: 8300000, guid: c1b0bf39f893e2d4ca69d7e20548b572, type: 3}
-  - {fileID: 8300000, guid: be27734b27ae6664dbddb8e1c0320c48, type: 3}
-  - {fileID: 8300000, guid: ad9f41befd1b56d44b521bfaf2f4f935, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 599226a09e69c314eaa7ff6446042eaf, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 8300000, guid: 4944ede0c1aab134d8834d8f806280dd, type: 3}
   audioSource: {fileID: 833719067}
@@ -6401,8 +6399,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: {fileID: 1837267593}
-  audioSource: {fileID: 833719067}
-  clip: {fileID: 8300000, guid: 433a3d3af88817142804d9e4a0ddc2f2, type: 3}
 --- !u!1 &579477978
 GameObject:
   m_ObjectHideFlags: 0
@@ -6940,8 +6936,8 @@ GameObject:
   m_Component:
   - component: {fileID: 626991716}
   - component: {fileID: 626991715}
+  - component: {fileID: 626991717}
   - component: {fileID: 626991718}
-  - component: {fileID: 626991719}
   m_Layer: 0
   m_Name: GeklopOpDeur
   m_TagString: Untagged
@@ -7060,6 +7056,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &626991717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626991714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f5fb5081276554f95ddd9d00c442b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &626991718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7083,19 +7091,6 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours: []
   SimulationBehaviours: []
---- !u!114 &626991719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626991714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 700d0526b2928364595255210419d699, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spotlightController: {fileID: 578565961}
 --- !u!1 &627724631
 GameObject:
   m_ObjectHideFlags: 0
@@ -11865,6 +11860,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1101130388}
+  - component: {fileID: 1101130389}
   - component: {fileID: 1101130391}
   - component: {fileID: 1101130392}
   - component: {fileID: 1101130393}
@@ -11896,6 +11892,18 @@ Transform:
   m_Father: {fileID: 2547159383368130177}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0.06, z: 0}
+--- !u!114 &1101130389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101130386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e2f8a179263ca647997b430acc7f283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1101130391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11915,7 +11923,7 @@ MonoBehaviour:
     - {fileID: 2100000, guid: f4832f5cc919c034b959043b38d7cc52, type: 2}
     - {fileID: 2100000, guid: 90f08d43a3cc8af459992deb918ffdbb, type: 2}
     - {fileID: 2100000, guid: ff5577db95c7ffd4bb570598345f18d1, type: 2}
-    audioClip: {fileID: 8300000, guid: eba595976f2a2ce48aa166595fcd2452, type: 3}
+    audioClip: {fileID: 8300000, guid: 6cfabf3b4c559b944ab0c44df6708654, type: 3}
   - text: Churchill speech
     imageMaterials:
     - {fileID: 2100000, guid: ff5577db95c7ffd4bb570598345f18d1, type: 2}
@@ -27234,7 +27242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2547159383368130177}
   m_Layer: 0
-  m_Name: Beginkamer
+  m_Name: Bioscoop (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
