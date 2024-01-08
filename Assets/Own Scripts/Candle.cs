@@ -46,6 +46,7 @@ public class Candle : MonoBehaviour
             materials.Add(litMaterial);
             meshRenderer.materials = materials.ToArray();
             candleLight.SetActive(true);
+            Debug.Log("Lamp gaat aan");
         }
 
         CandleManager.Instance.CheckAllCandlesLit();
