@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
@@ -12,8 +11,13 @@ public class AudioTest
     [UnityTest]
     public IEnumerator AudioTestWithEnumeratorPasses()
     {
+        GameObject gameobjectAudio = new GameObject();
+        AudioController audioController = gameobjectAudio.AddComponent<AudioController>();
+
+        audioController.PlayAudioAtTargetIndex(0);
 
         yield return null;
 
+        Assert.AreEqual(true, audioController.audioSource.isPlaying);
     }
 }
