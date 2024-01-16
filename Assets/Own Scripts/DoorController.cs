@@ -18,13 +18,12 @@ public class DoorController : MonoBehaviour
   private bool timerActive = false;
   public GameObject door;
   public Orientation orientation;
-    private bool hasSwitchedTargets = false;
 
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(triggerActive);
 
-        if (triggerActive && !hasSwitchedTargets)
+        if (triggerActive)
         {
             if (!isOpen)
             {
@@ -40,14 +39,6 @@ public class DoorController : MonoBehaviour
                 triggerActive = false;
                 Debug.Log("Door closed!");
             }
-
-            // Call SwitchToNextTarget from the SpotlightController
-            if (spotlightController != null && !hasSwitchedTargets)
-            {
-                spotlightController.SwitchToNextTarget();
-            }
-
-            hasSwitchedTargets = true; // Set the flag to true
         }
     }
 
@@ -64,11 +55,6 @@ public class DoorController : MonoBehaviour
     {
         triggerActive = true;
         timerActive = false;
-    }
-
-    public void ResetSwitchedTargetsFlag()
-    {
-        hasSwitchedTargets = false;
     }
 
     private void OpenDoor()

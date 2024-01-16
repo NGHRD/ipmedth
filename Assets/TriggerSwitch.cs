@@ -5,6 +5,7 @@ using UnityEngine;
 public class TriggerSwitch : MonoBehaviour
 {
     private bool hasSwitchedTargets = false;
+    public int preferedTargetIndex;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -12,7 +13,7 @@ public class TriggerSwitch : MonoBehaviour
         {
             SpotlightController spotlightController = FindObjectOfType<SpotlightController>();
 
-            if (spotlightController != null)
+             if (spotlightController.targetIndex == preferedTargetIndex && spotlightController != null && !hasSwitchedTargets)
             {
                 spotlightController.SwitchToNextTarget();
                 hasSwitchedTargets = true;
